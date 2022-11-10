@@ -14,3 +14,7 @@
 	path = Gitlab/na_website_scroll_top_bytesfuel
 	url = git@gitlab.com:nexapp-srl/odoo/na_website_scroll_top_bytesfuel.git
 	branch = 16.0
+[submodule "Gitlab/na_mager_customers_location"]
+	path = Gitlab/na_mager_customers_location
+	url = git@gitlab.com:nexapp-srl/odoo/na_mager_customers_location.git
+	branch = 16.0
