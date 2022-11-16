@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+    <template id="portal_mager_my_invoices" name="My Invoices">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Invoices</t>
+            </t>
+            <t t-if="not invoices">
+                <p>There are currently no invoices and payments for your account.</p>
+            </t>
+            <t t-if="invoices" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th class='text-center'>Name</th>
+                        <th class='text-center'>Customer</th>
+                        <th class='text-center'>Date of Issue</th>
+                        <th class='text-center'>Due Date</th>
+                        <th class="text-center">Download &amp; Print</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="invoices" t-as="invoice">
+                        <tr>
+                            <td class='tx_status text-center'>
+                                <!--                                <a t-att-href="invoice.get_portal_url()" t-att-title="invoice.name">-->
+                                <t t-esc="invoice.name" t-if="invoice.name != '/'"/>
+                                <em t-else="">Draft Invoice</em>
+                                <!--                                </a>-->
+                            </td>
+                            <td class='tx_status text-center'>
+                                <t t-esc="invoice.customer.name"/>
+                            </td>
+                            <td class='tx_status text-center'>
+                                <span t-field="invoice.date_of_issue"/>
+                            </td>
+                            <td class='tx_status text-center'>
+                                <span t-field="invoice.invoice_due_date"/>
+                            </td>
+                            <td class="text-center">
+                                <a t-att-href="'%s?download=True' % invoice.pdf_link"
+                                   class="btn btn-primary">
+                                    <i class="fa fa-download"></i>
+                                </a>
+                                <a t-att-href="invoice.pdf_link" role="button"
+                                   class="btn btn-primary">
+                                    <i class="fa fa-print"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_mager_my_ddts" name="My Ddts">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">DDT</t>
+            </t>
+            <t t-if="not invoices">
+                <p>There are currently no invoices and payments for your account.</p>
+            </t>
+            <t t-if="invoices" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th class='text-center'>Name</th>
+                        <th class='text-center'>Customer</th>
+                        <th class='text-center'>Date of Issue</th>
+                        <th class='text-center'>Due Date</th>
+                        <th class="text-center">Download &amp; Print</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="invoices" t-as="invoice">
+                        <tr>
+                            <td class='tx_status text-center'>
+                                <!--                                <a t-att-href="invoice.get_portal_url()" t-att-title="invoice.name">-->
+                                <t t-esc="invoice.name" t-if="invoice.name != '/'"/>
+                                <em t-else="">Draft Invoice</em>
+                                <!--                                </a>-->
+                            </td>
+                            <td class='tx_status text-center'>
+                                <t t-esc="invoice.customer.name"/>
+                            </td>
+                            <td class='tx_status text-center'>
+                                <span t-field="invoice.date_of_issue"/>
+                            </td>
+                            <td class='tx_status text-center'>
+                                <span t-field="invoice.invoice_due_date"/>
+                            </td>
+                            <td class="text-center">
+                                <a t-att-href="'%s?download=True' % invoice.pdf_link"
+                                   class="btn btn-primary">
+                                    <i class="fa fa-download"></i>
+                                </a>
+                                <a t-att-href="invoice.pdf_link" role="button"
+                                   class="btn btn-primary">
+                                    <i class="fa fa-print"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_mager_my_home_invoice" name="Show Invoices" inherit_id="portal.portal_my_home"
+              customize_show="True" priority="11">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Invoices</t>
+                <t t-set="url" t-value="'/my/mager_invoices'"/>
+                <field name="mager_invoice_count" invisible="1"/>
+                <t t-set="placeholder_count" t-value="'mager_invoice_count'"/>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">DDT</t>
+                <t t-set="url" t-value="'/my/mager_ddts'"/>
+                <field name="mager_ddt_count" invisible="1"/>
+                <t t-set="placeholder_count" t-value="'mager_ddt_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_menu_mager_invoice" name="Portal layout : mager invoice menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'mager_invoice'" t-attf-class="breadcrumb-item #{'active ' if not invoice else ''}">
+                <a t-if="invoice" t-attf-href="/my/invoices?{{ keep_query() }}">Invoices &amp; Bills</a>
+                <t t-else="">Invoices</t>
+            </li>
+            <li t-if="page_name == 'mager_ddt'" t-attf-class="breadcrumb-item #{'active ' if not invoice else ''}">
+                <a t-if="invoice" t-attf-href="/my/invoices?{{ keep_query() }}">Invoices &amp; Bills</a>
+                <t t-else="">DDT</t>
+            </li>
+            <li t-if="invoice" class="breadcrumb-item active">
+                <t t-esc="invoice.name" t-if="invoice.name != '/'"/>
+                <t t-else="">
+                    <em>Draft Invoice</em>
+                </t>
+            </li>
+        </xpath>
+    </template>
+</odoo>

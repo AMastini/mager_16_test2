@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_template_manager,product.template.manager,model_product_template,na_mager_product.product_group_manager_mager,1,1,1,1
+access_accessories_manager,accessories.manager,model_accessories,na_mager_product.product_group_manager_mager,1,1,1,1
+access_display_category_manager,display.category.manager,model_display_category,na_mager_product.product_group_manager_mager,1,1,1,1
+access_product_template_public,product.template.public,model_product_template,base.group_public,1,0,0,0
+access_accessories_public,accessories.public,model_accessories,base.group_public,1,0,0,0
+access_display_category_public,display.category.public,model_display_category,base.group_public,1,0,0,0
+access_uom_public,display.uom.public,uom.model_uom_uom,base.group_public,1,0,0,0
+access_product_template_portal,product.template.portal,model_product_template,base.group_portal,1,0,0,0
+access_accessories_portal,accessories.portal,model_accessories,base.group_portal,1,0,0,0
+access_display_category_portal,display.category.portal,model_display_category,base.group_portal,1,0,0,0
+access_uom_portal,display.uom.portal,uom.model_uom_uom,base.group_portal,1,0,0,0

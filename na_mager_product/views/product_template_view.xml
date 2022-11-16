@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+
+    <record id="na_mager_product_product_template_only_form_view_inherit" model="ir.ui.view">
+        <field name="name">na.mager.product.product.template.only.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!--            <xpath expr="//group[@name='group_lots_and_weight']/label[@for='weight']" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
+            <!--            <xpath expr="//group[@name='group_lots_and_weight']/div[@name='weight']" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
+            <!--            <xpath expr="//field[@name='categ_id']" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
+            <!--            <xpath expr="//field[@name='default_code']" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
+
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page name="technical_data" string="Technical data">
+                    <group name="main_data">
+                        <group>
+                            <div class="o_column" name="default_code_label">
+                                <label for="default_code" string="Code"
+                                       attrs="{'invisible': [('series', '=', 'xab')]}" style="font-weight:bold;"/>
+                                <label for="default_code" string="Code RBB – only air bushing version"
+                                       attrs="{'invisible': ['|',('series', '!=', 'xab'),('support', '=', True)]}"
+                                       style="font-weight:bold;"/>
+                                <label for="default_code" string="Code RFx – air bushing + support version"
+                                       attrs="{'invisible': [('support', '=', False)]}" style="font-weight:bold;"/>
+                            </div>
+                            <div class="o_row" name="default_code">
+                                <field name="default_code"/>
+                            </div>
+                            <field name="display_category_id" style="width:300px"/>
+                            <field name="series" invisible="1"/>
+                            <field name="support" attrs="{'invisible': [('series', '!=', 'xab')]}" readonly="0"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group name="technical_data" string="Technical data">
+                            <!-- using height as the ref. because it's used in all the prods. -->
+                            <label for="height" string="Dimensions"
+                                   attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab'), ('support', '=', False)]}"/>
+                            <div class="o_row" name="dimensions"
+                                 attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab'), ('support', '=', False)]}">
+                                <field name="length"
+                                       attrs="{'invisible': [('series', '=', 'hpc')]}"/>
+                                <span attrs="{'invisible': [('series', '=', 'hpc')]}">x</span>
+                                <field name="width"
+                                       attrs="{'invisible': [('series', '=', 'hpc')]}"/>
+                                <span attrs="{'invisible': [('series', '=', 'hpc')]}">x</span>
+                                <span attrs="{'invisible': [('series', '!=', 'hpc')]}">Ø</span>
+                                <field name="diameter" attrs="{'invisible': [('series', '!=', 'hpc')]}"/>
+                                <span attrs="{'invisible': [('series', '!=', 'hpc')]}">x</span>
+                                <field name="height"/>
+                                <span>
+                                    <field name="length_uom_name"/>
+                                </span>
+                            </div>
+                            <label for="rbb_dimensions"
+                                   attrs="{'invisible': ['|','|', ('series', 'in', ['kit','other']), ('series', '!=', 'xab'), ('support', '=', True)]}"
+                                   string="Dimensions"/>
+                            <div class="o_row" name="rbb_dimensions"
+                                 attrs="{'invisible': ['|', '|',('series', 'in', ['kit','other']), ('series', '!=', 'xab'), ('support', '=', True)]}">
+                                <field name="rbb_dimensions"/>
+                                <span>
+                                    <field name="length_uom_name"/>
+                                </span>
+                            </div>
+                            <label for="weight" attrs="{'invisible': [('series', 'in', ['kit','other'])]}"/>
+                            <div class="o_row" name="weight" attrs="{'invisible': [('series', 'in', ['kit','other'])]}">
+                                <field name="weight"/>
+                                <span>
+                                    <field name="weight_uom_name"/>
+                                </span>
+                            </div>
+                            <field name="mounting_kit_id"
+                                   attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab')]}"
+                                   domain="[('series', 'in', ['kit','other'])]"
+                                   options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                            <field name="wiper_kit_id"
+                                   attrs="{'invisible': ['|', '|', ('series', 'in', ['kit','other']), ('series', '=', 'xab'), ('series', '!=', 'hra')]}"
+                                   domain="[('series', 'in', ['kit','other'])]"/>
+                            <field name="rfx_id"
+                                   attrs="{'invisible': ['|', '|', ('series', 'in', ['kit','other']), ('series', '!=', 'xab'), ('support', '=', False)]}"/>
+                            <field name="screw_pin_thread"
+                                   attrs="{'invisible': ['|',('series', '=', 'xab'), ('series', 'in', ['kit','other'])]}"/>
+                            <field name="dimensions_descriptions"
+                                   attrs="{'invisible': [('series', 'not in', ['kit','other'])]}"/>
+
+                            <field name="product_kit_ids"
+                                   attrs="{'invisible': [('series', '!=', 'kit')], 'readonly': True}">
+                                <tree editable="bottom" delete="0" create="0">
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+
+                            <field name="perfect_fit_for_others" attrs="{'invisible': [('series', '!=', 'other')]}"/>
+
+                            <label for="air_nominal_supply_pressure"
+                                   attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab')]}"/>
+                            <div class="o_row" name="air_nominal_supply_pressure"
+                                 attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab')]}">
+                                <field name="air_nominal_supply_pressure"/>
+                                <span>bar</span>
+                            </div>
+                        </group>
+
+                        <group name="hra_variants_data" string="Variants data"
+                               attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '!=', 'hra')]}">
+                            <field name="hra_interfacing"/>
+                            <field name="hra_coating_air_surface"/>
+                        </group>
+
+                    </group>
+                    <group>
+                        <group name="performance_10" string="Perfomances @ 10µm air gap"
+                               attrs="{'invisible': ['|', '|', ('series', 'in', ['kit','other']),  ('series', '=', 'hra'),('series', '=', 'xab')]}">
+
+                            <label for="product_load"/>
+                            <div class="o_row" name="product_load">
+                                <field name="product_load"/>
+                                <span>N</span>
+                            </div>
+
+                            <label for="stiffness"/>
+                            <div class="o_row" name="stiffness">
+                                <field name="stiffness"/>
+                                <span>N/µm</span>
+                            </div>
+
+                            <label for="air_consumption_min" string="Air consumption"/>
+                            <div class="o_row" name="air_consumption">
+                                <field name="air_consumption_min"/>
+                                <span>÷</span>
+                                <field name="air_consumption_max"/>
+                                <span>l/min (ANR)</span>
+                            </div>
+                        </group>
+                        <group name="performance_4" string="Perfomances @ 4µm air gap"
+                               attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '!=', 'xab')]}">
+
+                            <label for="product_load" string="Maximum Radial Load"/>
+                            <div class="o_row" name="product_load">
+                                <field name="product_load"/>
+                                <span>N</span>
+                            </div>
+
+                            <label for="stiffness" string="Radial Stiffness"/>
+                            <div class="o_row" name="stiffness">
+                                <field name="stiffness"/>
+                                <span>N/µm</span>
+                            </div>
+
+                            <label for="air_consumption_min" string="Air consumption"/>
+                            <div class="o_row" name="air_consumption">
+                                <field name="air_consumption_min"/>
+                                <span>÷</span>
+                                <field name="air_consumption_max"/>
+                                <span>l/min (ANR)</span>
+                            </div>
+                        </group>
+                        <group name="performance_max_stiffness" string="Perfomances @ maximum stiffness"
+                               attrs="{'invisible': ['|', ('series', 'in', ['kit','other']), ('series', '=', 'xab')]}">
+
+                            <label for="max_stiffness"/>
+                            <div class="o_row" name="max_stiffness">
+                                <field name="max_stiffness"/>
+                                <span>N/µm</span>
+                            </div>
+
+                            <label for="air_gap"/>
+                            <div class="o_row" name="air_gap">
+                                <field name="air_gap"/>
+                                <span>µm</span>
+                            </div>
+
+                            <label for="max_stiffness_load" string="Load"/>
+                            <div class="o_row" name="max_stiffness_load">
+                                <field name="max_stiffness_load"/>
+                                <span>N</span>
+                            </div>
+
+                            <label for="max_stiffness_air_consumption_min" string="Air consumption"/>
+                            <div class="o_row" name="air_consumption">
+                                <field name="max_stiffness_air_consumption_min" string="Air consumption min."/>
+                                <span>÷</span>
+                                <field name="max_stiffness_air_consumption_max" string="Air consumption max."/>
+                                <span>l/min (ANR)</span>
+                            </div>
+                        </group>
+                    </group>
+
+                    <!-- keep this lines of code -->
+                    <!--                    <notebook>-->
+                    <!--                        <page string="Attachments">-->
+                    <!--                            <group>-->
+                    <!--                                <field name="data_sheet"/>-->
+                    <!--                                <field name="cad_3d"/>-->
+                    <!--                                <field name="pdf_drawing"/>-->
+                    <!--                                <field name="accessories"/>-->
+                    <!--                                <field name="accessories_cad_3d"/>-->
+                    <!--                                <field name="image"/>-->
+                    <!--                            </group>-->
+                    <!--                        </page>-->
+                    <!--                    </notebook>-->
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="na_mager_product_product_template_common_form_inherit" model="ir.ui.view">
+        <field name="name">na.mager.product.product.template.common.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='inventory']/group[@name='group_lots_and_weight']" position="inside">
+                <label for="packing_weight"/>
+                <div class="o_row">
+                    <field name="packing_weight"/>
+                    <span>
+                        <field name="weight_uom_name"/>
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem
+            id="mager_parent"
+            name="Mager"
+            parent="stock.menu_stock_config_settings"
+            sequence="111"/>
+
+</odoo>

@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+
+    <!-- adding noindex metadata so the website isn't indexed -->
+    <template id="mager_custom_layout" inherit_id="portal.frontend_layout" name="Custom Layout">
+        <xpath expr="//head/meta[last()]" position="after">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta name="robots" content="noindex"/>
+            </head>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <div id="overlay" class="mask text-light justify-content-center flex-column">
+                <div class="d-flex justify-content-center">
+                    <t t-call="website.website_search_box_input">
+                        <t t-set="_classes" t-valuef="mt8"/>
+                        <t t-set="search_type" t-valuef="all"/>
+                        <t t-set="action" t-valuef="/website/search"/>
+                    </t>
+                    <div t-if="pages" class="table-responsive">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr t-foreach="pages" t-as="page">
+                                    <td>
+                                        <a t-att-href="page.url">
+                                            <t t-esc="page.name"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                        <t t-call="website.pager"/>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function on() {
+                document.getElementById("overlay").classList.add("d-flex");
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("overlay").style.transition = "all 1s";
+                document.getElementById("cancel_search_btn").style.display = "block";
+                document.getElementById("mager_search").style.color = "white";
+<!--                document.getElementById("mager_search").style.fontSize = "3rem";-->
+<!--                document.getElementById("search_bar").style.fontSize = "3rem";-->
+                }
+
+                function off() {
+                document.getElementById("overlay").classList.remove("d-flex");
+                document.getElementById("overlay").style.display = "none";
+                document.getElementById("cancel_search_btn").style.display = "none";
+                document.getElementById("search_bar").style.fontSize = "1rem";
+                document.getElementById("mager_search").style.color = "black";
+                }
+
+                function changeFontSize(media_query) {
+                if (media_query.matches) {
+                document.getElementById("mager_search").style.fontSize = "1.5rem";
+                document.getElementById("search_bar").style.fontSize = "1.5rem";
+                document.getElementById("trash_icon").style.fontSize = "1.5rem";
+                } else {
+                document.getElementById("mager_search").style.fontSize = "3rem";
+                document.getElementById("search_bar").style.fontSize = "3rem";
+                document.getElementById("trash_icon").style.fontSize = "3rem";
+                }
+                }
+                var media_query = window.matchMedia("(max-width: 1050px)")
+                changeFontSize(media_query) // Call listener function at run time
+                media_query.addListener(changeFontSize) // Attach listener function on state changes
+
+            </script>
+
+        </xpath>
+    </template>
+
+    <template id="mager_website_search_box" inherit_id="website.website_search_box" name="Mager Search Box">
+        <xpath expr="//i[@class='oi oi-search']/.." position="attributes">
+            <attribute name="style">background-color: transparent; border: none !important;</attribute>
+        </xpath>
+        <xpath expr="//i[@class='oi oi-search']" position="attributes">
+            <attribute name="id">mager_search</attribute>
+        </xpath>
+        <xpath expr="//input[@name='search']" position="attributes">
+            <attribute name="id">search_bar</attribute>
+        </xpath>
+        <xpath expr="//i[@class='oi oi-search']" position="after">
+            <button id="cancel_search_btn" onclick="off()" class="mb-3 btn btn-primary"
+                    style="background-color: transparent; display: none; border: none !important;">
+                <i id="trash_icon" class="fa fa-trash-o" style="color: white; font-size: 3rem;"></i>
+            </button>
+        </xpath>
+    </template>
+
+
+    <!-- use this template to modify the flat air bearings page -->
+    <template id="flat-air-bearings" name="Flat Air Bearings Layout">
+        <t t-name="theme_mager.flat-air-bearings">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_picture o_colored_level parallax o_cc o_cc2 pt64 pb0" data-snippet="s_picture"
+                             data-name="Picture"
+                             style="background-position: 68.4334% 0%; position: relative; background-color: rgb(255, 255, 255) !important; background-image: none;"
+                             data-scroll-background-ratio="-0.15" data-original-id="1857"
+                             data-original-src="/web/image/1857-5405e8e5/bearings-2-scaled-e1656322223520.jpg"
+                             data-mimetype="image/jpeg" data-resize-width="1920">
+                        <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                              style="background-image: url(&quot;/web/image/2608-9f0cbea9/bearings-2-scaled-e1656322223520.jpg&quot;); background-position: 4.64135% 0%; top: -10.035px; bottom: -10.035px; transform: translateY(3px);"/>
+                        <div class="o_we_bg_filter bg-black-50"/>
+                        <div class="container-fluid">
+                            <h3 style="text-align: center;">
+                                <font class="text-o-color-3" style="font-weight: 500;">FLAT AIR BEARINGS - HP
+                                    series
+                                </font>
+                                <br/>
+                            </h3>
+                            <ul style="text-align: center;">
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <br/>
+                                    </h3>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                        </div>
+                    </section>
+                    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id="internal_nav_bar_mager">
+                        <div class="collapse navbar-collapse" id="navbarNav" data-original-title="" title=""
+                             aria-describedby="tooltip687528">
+                            <ul class="products navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       onclick="document.getElementById('hp-series').scrollIntoView({ behavior: 'smooth', block: 'end'});">
+                                        HP SERIES
+                                    </a>
+                                </li>
+                                <div class="border-right"/>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       onclick="document.getElementById('hra-series').scrollIntoView({ behavior: 'smooth', block: 'start'});">
+                                        HRA SERIES
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div id="scrolling-box">
+                        <section class="s_title o_colored_level pb4 pt56" data-vcss="001" data-snippet="s_title"
+                                 data-name="Title"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;">
+                            <div id="products-titles" class="s_allow_columns container">
+                                <h1 style="text-align: left;">
+                                    <font>HP SERIES</font>&amp;nbsp;
+                                    <br/>
+                                </h1>
+                            </div>
+                        </section>
+                        <section id="hp-series" class="s_features o_colored_level pb0 pt0" data-snippet="s_features"
+                                 data-name="Features"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                                 data-anchor="true" data-original-title="" title="" aria-describedby="tooltip924068">
+                            <div class="container">
+                                <div class="row" data-original-title="" title="" aria-describedby="tooltip598833">
+                                    <div id="hpr-card"
+                                         class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/3697-4d2cfb87/img%20img%20img.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="3696"
+                                                 data-original-src="/web/image/3696-a66162d1/img%20img%20img.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="690"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>FLAT RECTANGULAR AIR BEARINGS</h2>
+                                            <a href="/shop/category/flat-air-bearings-hpr-rectangular-10" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="hpc-card"
+                                         class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/495-b654f3bd/HPC1.2PKIT-icona.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="3696"
+                                                 data-original-src="/web/image/3696-a66162d1/img%20img%20img.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="690"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>FLAT ROUND AIR BEARINGS</h2>
+                                            <a href="/shop/category/flat-air-bearings-hpc-round-9" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="hra-series" class="s_title o_colored_level pb8 pt64" data-vcss="001"
+                                 data-snippet="s_title" data-name="Title"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;">
+                            <div class="s_allow_columns container" id="products-titles">
+                                <h1 style="text-align: left;">
+                                    <font style="font-size: 1.8666666666667rem; font-weight: 500; font-family: 'Oswald',sans-serif; color: rgb(1, 158, 227);">
+                                        HRA SERIES
+                                    </font>
+                                    <br/>
+                                </h1>
+                            </div>
+                        </section>
+                        <section class="s_features o_colored_level pt0 pb56" data-snippet="s_features"
+                                 data-name="Features"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                                 data-original-title="" title="" aria-describedby="tooltip924068">
+                            <div class="container">
+                                <div class="row" data-original-title="" title="" aria-describedby="tooltip598833">
+                                    <div id="hra-card"
+                                         class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/3753-a2a20aef/HRA2030P.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="501"
+                                                 data-original-src="/web/image/501-f2221e5f/HRA2030P.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="690"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>HEAVY DUTY FLAT AIR BEARINGS</h2>
+                                            <a href="/shop/category/heavy-duty-hra-series-11" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <!-- use this template to modify the flat air bearings page -->
+
+    <!-- use this template to modify the air bushings page -->
+    <template id="air-bushings" name="Air Bushings Layout">
+        <t t-name="website.air-bushings">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_picture o_colored_level parallax pb0 o_cc o_cc2 pt64" data-snippet="s_picture"
+                             style="background-position: 68.4334% 0%; position: relative; background-color: rgb(255, 255, 255) !important; background-image: none;"
+                             data-scroll-background-ratio="0.15" data-original-id="1857"
+                             data-original-src="/web/image/1857-5405e8e5/bearings-2-scaled-e1656322223520.jpg"
+                             data-mimetype="image/jpeg" data-resize-width="1920" data-name="Custom Picture (3)">
+                        <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                              style="background-image: url(&quot;/web/image/3825-907f88a8/bushings-scaled-e1656321575602.jpg&quot;); background-position: 4.64135% 0%; top: -12.915px; bottom: -12.915px; transform: translateY(-5px);"
+                              data-original-id="3794"
+                              data-original-src="/web/image/3794-4afdcc9f/bushings-scaled-e1656321575602.jpg"
+                              data-mimetype="image/jpeg" data-resize-width="1920"/>
+                        <div class="o_we_bg_filter bg-black-50"/>
+                        <div class="container-fluid">
+                            <ul style="text-align: center;">
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <br/>
+                                    </h3>
+                                </li>
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <font class="text-o-color-3" style="font-weight: 500;">AIR BUSHINGS - XABR
+                                            series
+                                        </font>
+                                        <br/>
+                                    </h3>
+                                </li>
+                            </ul>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                        </div>
+                    </section>
+                    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id="internal_nav_bar_mager">
+                        <div class="collapse navbar-collapse" id="navbarNav" data-original-title="" title=""
+                             aria-describedby="tooltip687528">
+                            <ul class="products navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#Air-Bushings">AIR BUSHINGS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div id="scrolling-box">
+                        <section class="s_title o_colored_level pb4 pt56" data-vcss="001" data-snippet="s_title"
+                                 data-name="Title"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;">
+                            <div id="products-titles" class="s_allow_columns container">
+                                <h1 style="text-align: left;"><font>AIR BUSHINGS</font>&amp;nbsp;
+                                    <br/>
+                                </h1>
+                            </div>
+                        </section>
+                        <section class="s_features o_colored_level pt0 pb56" data-snippet="s_features"
+                                 data-name="Features"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                                 id="Air-Bushings" data-anchor="true" data-original-title="" title=""
+                                 aria-describedby="tooltip924068">
+                            <div class="container">
+                                <div class="row" data-original-title="" title="" aria-describedby="tooltip598833">
+                                    <div class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/3775-143e5017/XABR010_1.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="3774"
+                                                 data-original-src="/web/image/3774-fe0bec61/XABR010_1.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="690"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>XABR series
+                                                <br/>
+                                            </h2>
+                                            <a href="/shop/category/air-bushings-xab-series-7" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <!-- use this template to modify the air bushings page -->
+
+    <!-- use this template to modify the accessories page -->
+    <template id="accessories" name="Accessories Layout Mager">
+        <t t-name="website.accessories">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_picture o_colored_level parallax pb0 o_cc o_cc2 pt72" data-snippet="s_picture"
+                             style="background-position: 68.4334% 0%; position: relative; background-color: rgb(255, 255, 255) !important; background-image: none;"
+                             data-scroll-background-ratio="0.15" data-original-id="1857"
+                             data-original-src="/web/image/1857-5405e8e5/bearings-2-scaled-e1656322223520.jpg"
+                             data-mimetype="image/jpeg" data-resize-width="1920" data-name="Custom Picture (3)">
+                        <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                              style="background-image: url(&quot;/web/image/3796-59ff2f53/accessories-immagine-in-evidenza.jpg&quot;); background-position: 4.64135% 0%; top: -12.915px; bottom: -12.915px; transform: translateY(-5px);"
+                              data-original-id="3792"
+                              data-original-src="/web/image/3792-d281e90c/accessories-immagine-in-evidenza.jpg"
+                              data-mimetype="image/jpeg" data-resize-width="1600"/>
+                        <div class="o_we_bg_filter bg-black-50"/>
+                        <div class="container-fluid">
+                            <ul style="text-align: center;">
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <br/>
+                                    </h3>
+                                </li>
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <font class="text-o-color-3 o_default_snippet_text" style="font-weight: 500;">
+                                            ACCESSORIES
+                                        </font>
+                                        <br/>
+                                    </h3>
+                                </li>
+                            </ul>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                        </div>
+                    </section>
+                    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id="internal_nav_bar_mager">
+                        <div class="collapse navbar-collapse" id="navbarNav" data-original-title="" title=""
+                             aria-describedby="tooltip687528">
+                            <ul class="products navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#Kit">KITS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div id="scrolling-box">
+                        <section class="s_title o_colored_level pb4 pt56" data-vcss="001" data-snippet="s_title"
+                                 data-name="Title"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;">
+                            <div id="products-titles" class="s_allow_columns container">
+                                <h1 style="text-align: left;"><font>KITS</font>&amp;nbsp;
+                                    <br/>
+                                </h1>
+                            </div>
+                        </section>
+                        <section class="s_features o_colored_level pt0 pb48" data-snippet="s_features"
+                                 data-name="Features"
+                                 style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                                 id="Kit" data-anchor="true" data-original-title="" title=""
+                                 aria-describedby="tooltip924068">
+                            <div class="container">
+                                <div class="row" data-original-title="" title="" aria-describedby="tooltip598833">
+                                    <div class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img id="mounting-kit-p" class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/3798-a5c97073/KIT%20SITO.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="3797"
+                                                 data-original-src="/web/image/3797-b0c25f41/KIT%20SITO.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="987" data-quality="45"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>MOUNTING KIT P-KIT
+                                                <br/>
+                                            </h2>
+                                            <a href="/shop/category/accessories-p-kit-5" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                         style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                         href="/shop/category/flat-air-bearings-hpr-rectangular-10"
+                                         data-original-title="" title="" aria-describedby="tooltip758235">
+                                        <h3>
+                                            <img class="img-fluid o_we_custom_image o_animating"
+                                                 src="/web/image/3800-085ea137/R-KIT-E-senza-sfondo.jpg" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip229222"
+                                                 loading="lazy"
+                                                 style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15);"
+                                                 data-filter-options="{&quot;filterColor&quot;:&quot;rgba(0, 0, 0, 0.15)&quot;}"
+                                                 data-original-id="3799"
+                                                 data-original-src="/web/image/3799-a4f01f1f/R-KIT-E-senza-sfondo.jpg"
+                                                 data-mimetype="image/jpeg" data-resize-width="690"/>
+                                            <br/>
+                                            <br/>
+                                        </h3>
+                                        <div class="product-text-btn">
+                                            <h2>WIPER KIT R-KIT
+                                                <br/>
+                                            </h2>
+                                            <a href="/shop/category/accessories-r-kit-6" role="button"
+                                               class="click-here-btn btn-primary">Click here
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <!-- use this template to modify the accessories page -->
+
+
+    <!-- use this template to modify the website_sale.products page -->
+    <template id="mager-products" name="Mager Products Layout" inherit_id="website_sale.products">
+        <xpath expr="//t[@t-set='additional_title']" position="after">
+            <t t-set="user_country"
+               t-value="request.env['website.visitor']._get_visitor_from_request().country_id"/>
+            <t t-set="is_in"
+               t-value="request.env['website.location'].is_it_allowed(request.website, user_country)"/>
+        </xpath>
+        <xpath expr="//div[@id='products_grid']" position="attributes">
+            <attribute name="t-attf-class"
+                       remove="#{'o_wsale_layout_list' if layout_mode == 'list' else ''} {{'col-lg-9' if hasLeftColumn else 'col-12'}}"
+                       add="col" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='oe_structure_website_sale_products_1']" position="before">
+            <t t-if="category">
+                <t t-set="editor_msg">Drag building blocks here to customize the header for "
+                    <t t-esc="category.name"/>" category.
+                </t>
+                <div class="mb16" id="category_header" t-att-data-editor-message="editor_msg"
+                     t-field="category.website_description"/>
+            </t>
+        </xpath>
+        <xpath expr="//table[@t-att-data-ppg='ppg']" position="replace">
+            <div t-if="bins" class="o_wsale_products_grid_table_wrapper">
+                <div class="container" t-att-data-ppg="ppg"
+                     t-att-data-ppr="ppr">
+                    <!--                                            <colgroup t-ignore="true">-->
+                    <!--                                                &lt;!&ndash; Force the number of columns (useful when only one row of (x < ppr) products) &ndash;&gt;-->
+                    <!--                                                <col t-foreach="ppr" t-as="p"/>-->
+                    <!--                                            </colgroup>-->
+                    <div class="row te_features_design">
+                        <t t-foreach="bins" t-as="tr_product">
+                            <t t-foreach="tr_product" t-as="td_product">
+                                <t t-if="td_product">
+                                    <t t-set="product" t-value="td_product['product']"/>
+                                    <!-- We use t-attf-class here to allow easier customization -->
+                                    <div t-att-colspan="3"
+                                         t-att-rowspan="1"
+                                         t-attf-class="col-md-4 oe_product"
+                                         t-att-data-ribbon-id="td_product['ribbon'].id">
+                                        <div t-attf-class="o_wsale_product_grid_wrapper o_wsale_product_grid_wrapper_1_1">
+                                            <t t-call="website_sale.products_item">
+                                                <t t-set="product_image_big"
+                                                   t-value="td_product['x'] + td_product['y'] &gt; 3"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                                <td t-else=""/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <!-- use this template to modify the website_sale.products page -->
+
+    <!-- use this template to modify the website_sale.products_item page -->
+    <template id="mager-products-item" name="Mager Products Item Layout" inherit_id="website_sale.products_item">
+        <xpath expr="//t[@t-name='website_sale.products_item']" position="replace">
+            <t name="Products item" t-name="website_sale.products_item">
+                <t t-set="product_href"
+                   t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))"/>
+                <t t-set="combination_info"
+                   t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
+                <form method="post" class="card oe_product_cart"
+                      t-att-data-publish="product.website_published and 'on' or 'off'" itemscope="itemscope"
+                      itemtype="http://schema.org/Product">
+                    <!--                    <a class="o_product_link css_editable_mode_hidden"/>-->
+                    <div class="card-body p-1 oe_product_image">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                            <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                            <span t-field="image_holder.image_1920"
+                                  t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256', 'itemprop': 'image'}"
+                                  class="d-flex h-100 justify-content-center align-items-center"/>
+                        </a>
+                    </div>
+                    <div class="card-body p-0 o_wsale_product_information">
+                        <div class="container p-2 o_wsale_product_information_text">
+                            <h6 class="o_wsale_products_item_title mb-1">
+                                <a class="text-primary text-decoration-none" itemprop="name" t-att-href="product_href"
+                                   t-att-content="product.name" t-field="product.name"/>
+                                <a role="button" t-if="not product.website_published" t-att-href="product_href"
+                                   class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished
+                                </a>
+                            </h6>
+                            <hr class="row" style="height: 1px !important;"/>
+                            <div class="product_price mb-1" itemprop="offers" itemscope="itemscope"
+                                 itemtype="http://schema.org/Offer">
+                                <!--                        <span class="h5" t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+                                <!--                    <del t-attf-class="text-danger ml-1 h6 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />-->
+                                <!-- <span class="product-dimensions" itemprop="name" t-att-href="product_href" t-att-content="product.length" t-field="product.length" /><span>x</span><span class="product-dimensions" itemprop="name" t-att-href="product_href" t-att-content="product.length" t-field="product.length" />-->
+                                <!--                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />-->
+                                <!--                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />-->
+                                <div class="dimensions">
+                                    <t t-if="product.series != 'kit' and product.series != 'xab' or (product.series == 'xab' and product.support == True)">
+                                        <t t-if="product.series != 'hpc'">
+                                            <span t-esc="product.length"/>
+                                            <span>x</span>
+                                            <span t-esc="product.width"/>
+                                            <span>x</span>
+                                        </t>
+                                        <t t-if="product.series == 'hpc'">
+                                            <span>Ø</span>
+                                            <span t-esc="product.diameter"/>
+                                            <span>x</span>
+                                        </t>
+                                        <span t-esc="product.height"/>
+                                        <span t-esc="product.length_uom_name"/>
+                                    </t>
+                                    <t t-if="product.series == 'xab' and product.support == False">
+                                        <span t-esc="product.rbb_dimensions"/>
+                                        <span t-esc="product.length_uom_name"/>
+                                    </t>
+                                </div>
+                                <t t-if="product.series != 'kit'">
+                                    <div class="product-load">
+                                        <span t-esc="product.product_load"/>
+                                        <span>N</span>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="row">
+                                <a t-att-href="product_href" role="button" class="col-lg-7 click-here-btn btn-primary">
+                                    READ
+                                    MORE
+                                </a>
+
+
+                                <div t-if="is_in" id="wishlist-button" class="col-lg-4 o_wsale_product_btn pl-2"/>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-set="bg_color" t-value="td_product['ribbon']['bg_color'] or ''"/>
+                    <t t-set="text_color" t-value="td_product['ribbon']['text_color']"/>
+                    <t t-set="bg_class" t-value="td_product['ribbon']['html_class']"/>
+                    <span t-attf-class="o_ribbon #{bg_class}"
+                          t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}"
+                          t-out="td_product['ribbon']['html'] or ''"/>
+                </form>
+            </t>
+        </xpath>
+    </template>
+    <!-- use this template to modify the website_sale.products_item page -->
+
+    <!--    <template id="mager_cart" name="mager cart" inherit_id="website_sale.header_cart_link">-->
+    <!--        <xpath expr="//a[@href='/shop/cart']" position="before">-->
+    <!--            <t t-set="user_country"-->
+    <!--               t-value="request.env['website.visitor']._get_visitor_from_request().country_id"/>-->
+    <!--            <t t-set="is_in"-->
+    <!--               t-value="request.env['website.location'].is_it_allowed(request.website, user_country)"/>-->
+    <!--        </xpath>-->
+    <!--        <xpath expr="//a[@href='/shop/cart']" position="attributes">-->
+    <!--            <attribute name="style">$:is_customer_in(is_in)</attribute>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <template id="mager_cart" name="mager cart" inherit_id="website_sale.header_cart_link">
+        <xpath expr="//a[@href='/shop/cart']" position="before">
+            <t t-set="user_country"
+               t-value="request.env['website.visitor']._get_visitor_from_request().country_id"/>
+            <t t-set="is_in"
+               t-value="request.env['website.location'].is_it_allowed(request.website, user_country)"/>
+        </xpath>
+        <xpath expr="//a[@href='/shop/cart']" position="attributes">
+            <attribute name="t-if">is_in</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/shop/cart']" position="after">
+            <t t-else="">
+                <a href="/shop/cart" t-attf-class="#{_link_class}" style="display: none !important;">
+                    <i t-if="_icon" class="fa fa-shopping-cart"/>
+                    <span t-if="_text">My Cart</span>
+                    <sup class="my_cart_quantity badge text-bg-primary" t-esc="website_sale_cart_quantity"
+                         t-att-data-order-id="request.session.get('sale_order_id', '')"/>
+                </a>
+            </t>
+        </xpath>
+
+    </template>
+
+    <!--     use this template to modify the website_sale.product page-->
+    <template id="mager-product" name="Mager Product Layout" inherit_id="website_sale.product">
+
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
+            <t t-set="user_country" t-value="request.env['website.visitor']._get_visitor_from_request().country_id"/>
+            <t t-set="is_in" t-value="request.env['website.location'].is_it_allowed(request.website, user_country)"/>
+        </xpath>
+
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
+            <attribute name="t-if">is_in</attribute>
+        </xpath>
+
+        <!--        <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">-->
+        <!--            <attribute name="t-if">is_in</attribute>-->
+        <!--        </xpath>-->
+
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+            <t t-else="">
+                <div id="o_wsale_cta_wrapper" class="d-flex flex-wrap align-items-center"
+                     style="display: none !important;">
+                    <t t-set="hasQuantities" t-value="false"/>
+                    <t t-set="hasBuyNow" t-value="false"/>
+                    <t t-set="ctaSizeBig" t-value="not hasQuantities or not hasBuyNow"/>
+                    <div id="product_option_block" class="d-flex flex-wrap w-100"/>
+                </div>
+                <a href="/contactus" class="btn btn-primary btn_cta">Contact Us</a>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[@id='product_detail_main']" position="after">
+            <div class="col .offset-md-3" id="shopping-cart-col">
+                <form t-if="product._is_add_to_cart_possible()"
+                      action="/shop/cart/update" method="POST" id="phone-add-to-cart">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="js_product js_main_product mb-3">
+                        <div>
+                            <t t-call="website_sale.product_price"/>
+                            <small t-if="combination_info['base_unit_price']"
+                                   class="ms-1 text-muted o_base_unit_price_wrapper d-none"
+                                   groups="website_sale.group_show_uom_price">
+                                <t t-call="website_sale.base_unit_price"/>
+                            </small>
+                        </div>
+                        <t t-placeholder="select">
+                            <input type="hidden" class="product_id" name="product_id"
+                                   t-att-value="product_variant.id"/>
+                            <input type="hidden" class="product_template_id"
+                                   name="product_template_id"
+                                   t-att-value="product.id"/>
+                            <input t-if="product.public_categ_ids.ids" type="hidden"
+                                   class="product_category_id" name="product_category_id"
+                                   t-att-value="product.public_categ_ids.ids[0]"/>
+                            <input t-if="product.product_tag_ids.ids" type="hidden"
+                                   class="product_tag_id" name="product_tag_id"
+                                   t-att-value="product.product_tag_ids.ids[0]"/>
+                            <t t-if="combination" t-call="sale.variants">
+                                <t t-set="ul_class" t-valuef="flex-column"/>
+                                <t t-set="parent_combination" t-value="None"/>
+                            </t>
+                            <t t-else="">
+                                <ul class="d-none js_add_cart_variants mb-0"
+                                    t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                            </t>
+                        </t>
+                        <p t-if="True" class="css_not_available_msg alert alert-warning">This
+                            combination does not exist.
+                        </p>
+                        <div id="o_wsale_cta_wrapper"
+                             class="d-flex flex-wrap align-items-center">
+                            <t t-set="hasQuantities" t-value="false"/>
+                            <t t-set="hasBuyNow" t-value="false"/>
+                            <t t-set="ctaSizeBig" t-value="not hasQuantities or not hasBuyNow"/>
+                            <t t-set="user_country"
+                               t-value="request.env['website.visitor']._get_visitor_from_request().country_id"/>
+                            <t t-set="is_in"
+                               t-value="request.env['website.location'].is_it_allowed(request.website, user_country)"/>
+                            <t t-if="is_in">
+                                <div id="add_to_cart_wrap"
+                                     t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto">
+                                    <a role="button" id="add_to_cart"
+                                       t-attf-class="btn btn-primary js_check_product a-submit flex-grow-1 #{'btn-lg' if ctaSizeBig else ''}"
+                                       href="#">
+                                        <i class="fa fa-shopping-cart me-2"/>
+                                        <span style="font-weight: bold">ADD TO CART</span>
+                                    </a>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <a href="/contactus" class="btn btn-primary btn_cta">Contact Us</a>
+                            </t>
+                            <div id="product_option_block" class="d-flex flex-wrap w-100"/>
+                        </div>
+                        <div id="contact_us_wrapper"
+                             t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
+                            <section class="s_text_block" data-snippet="s_text_block"
+                                     data-name="Text">
+                                <div class="container">
+                                    <a t-att-href="website.contact_us_button_url"
+                                       class="btn btn-primary btn_cta">Contact Us
+                                    </a>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </form>
+                <p t-elif="not product.active" class="alert alert-warning">This product is no
+                    longer
+                    available.
+                </p>
+                <p t-else="" class="alert alert-warning">This product has no valid
+                    combination.
+                </p>
+            </div>
+            <div class="container" style="margin-bottom: 10%;">
+                <div class="s_tabs_main">
+                    <div class="s_tabs_nav mb-3">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <!-- nav_tabs_link_1666176939788_335 -->
+                                <a class="nav-link active" id="nav_tabs_link_1666176939788_335"
+                                   data-bs-toggle="tab"
+                                   href="#nav_tabs_content_1666176939788_335" role="tab"
+                                   aria-controls="nav_tabs_content_1666176939788_335"
+                                   aria-selected="true">TECHNICAL
+                                    DATA
+                                </a>
+                            </li>
+                            <t t-if="product.series != 'kit' and product.series != 'xab' and product.series != 'other'">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="nav_tabs_link_1666176939788_336"
+                                       data-bs-toggle="tab"
+                                       href="#nav_tabs_content_1666176939788_336" role="tab"
+                                       aria-controls="nav_tabs_content_1666176939788_336"
+                                       aria-selected="false">
+                                        PERFORMANCES
+                                    </a>
+                                </li>
+                            </t>
+                            <li class="nav-item">
+                                <a class="nav-link" id="nav_tabs_link_1666176939788_337"
+                                   data-bs-toggle="tab"
+                                   href="#nav_tabs_content_1666176939788_337" role="tab"
+                                   aria-controls="nav_tabs_content_1666176939788_337"
+                                   aria-selected="false">DRAWINGS
+                                    2D AND 3D
+                                </a>
+                            </li>
+                            <t t-if="product.series != 'kit' and product.series != 'other'">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="nav_tabs_link_1666176939788_338"
+                                       data-bs-toggle="tab"
+                                       href="#nav_tabs_content_1666176939788_338" role="tab"
+                                       aria-controls="nav_tabs_content_1666176939788_338"
+                                       aria-selected="false">
+                                        ACCESSORIES
+                                    </a>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                    <div class="s_tabs_content tab-content">
+                        <div class="tab-pane fade active show" id="nav_tabs_content_1666176939788_335"
+                             role="tabpanel" aria-labelledby="nav_tabs_link_1666176939788_335">
+                            <div class="oe_structure oe_empty">
+                                <section class="s_text_block" style="background-image: none;">
+                                    <div class="container s_allow_columns">
+                                        <div class="oe_structure">
+                                            <div class="container">
+                                                <div id="technical_data_product_title"
+                                                     style="border: 25px solid white;background-color: white;">
+                                                    <table class="table table-bordered table-striped">
+                                                        <tbody id="technical_data_product_row">
+                                                            <tr>
+                                                                <tr>
+                                                                    <th class="text-right">Model</th>
+                                                                    <td>
+                                                                        <span t-esc="product.name"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-right">Code</th>
+                                                                    <td>
+                                                                        <span t-esc="product.default_code"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <t t-if="product.series != 'other' and product.series != 'kit' and product.series != 'xab' or (product.series == 'xab' and product.support == True)">
+                                                                    <tr>
+                                                                        <th class="text-right">
+                                                                            Dimensions
+                                                                        </th>
+                                                                        <td>
+                                                                            <t t-if="product.series != 'hpc'">
+                                                                                <span t-esc="product.length"/>
+                                                                                <span>x</span>
+                                                                                <span t-esc="product.width"/>
+                                                                                <span>x</span>
+                                                                            </t>
+                                                                            <t t-if="product.series == 'hpc'">
+                                                                                <span>Ø</span>
+                                                                                <span t-esc="product.diameter"/>
+                                                                                <span>x</span>
+                                                                            </t>
+                                                                            <span t-esc="product.height"/>
+                                                                            <span t-esc="product.length_uom_name"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                                <t t-if="product.series == 'xab' and product.support == False">
+                                                                    <tr>
+                                                                        <th class="text-right">RBB
+                                                                            Dimensions
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.rbb_dimensions"/>
+                                                                            <span t-esc="product.length_uom_name"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                                <t t-if="product.series != 'other' and product.series != 'kit'">
+                                                                    <tr>
+                                                                        <th class="text-right">Weight
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.weight"/>
+                                                                            <span t-esc="product.weight_uom_name"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                                <t t-if="product.series != 'xab' and product.series != 'other' and  product.series != 'kit' ">
+                                                                    <tr>
+                                                                        <th class="text-right">Mounting
+                                                                            Kit
+                                                                        </th>
+                                                                        <td>
+                                                                            <a t-att-href="'%s-%s-%s' % (product.mounting_kit_id.default_code, product.mounting_kit_id.name.replace(' ', '-'), product.mounting_kit_id.id)">
+                                                                                <span t-esc="product.mounting_kit_id.name"/>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                                <t t-if="product.series == 'hra'">
+                                                                    <tr>
+                                                                        <th class="text-right">Wiper
+                                                                            Kit
+                                                                        </th>
+                                                                        <td>
+                                                                            <a t-att-href="'%s-%s-%s' % (product.wiper_kit_id.default_code, product.wiper_kit_id.name.replace(' ', '-'), product.wiper_kit_id.id)">
+                                                                                <span t-esc="product.wiper_kit_id.name"/>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                                <t t-if="product.series != 'xab' and product.series != 'other' and  product.series != 'kit'">
+                                                                    <tr>
+                                                                        <th class="text-right">Screw pin
+                                                                            – thread
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.screw_pin_thread"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+
+                                                                <t t-if="product.series == 'other' or product.series == 'kit'">
+                                                                    <tr>
+                                                                        <th class="text-right">Dimensions and
+                                                                            Descriptions
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.dimensions_descriptions"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <t t-if="product.series == 'other'"></t>
+                                                                    <tr>
+                                                                        <th class="text-right">Perfect fit for
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.perfect_fit_for_others"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <t t-if="product.series == 'kit'">
+                                                                        <tr>
+                                                                            <th class="text-right">Perfect
+                                                                                fit for
+                                                                            </th>
+                                                                            <td>
+                                                                                <t t-foreach="product.product_kit_ids"
+                                                                                   t-as="product_id">
+
+                                                                                    <a t-att-href="'%s-%s-%s' % (product_id.default_code, product_id.name.replace(' ', '-').replace('.', '-'), product_id.id)">
+                                                                                        <span t-esc="product_id.name"/>
+                                                                                    </a>
+                                                                                </t>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </t>
+                                                                </t>
+
+                                                                <t t-if="product.series != 'xab' and product.series != 'other' and product.series != 'kit'">
+                                                                    <tr>
+                                                                        <th class="text-right">Nominal
+                                                                            air supply
+                                                                            pressure
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.air_nominal_supply_pressure"/>
+                                                                            <span>bar</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </t>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <t t-if="product.series != 'hra' and product.series != 'xab' and product.series != 'other' and product.series != 'kit'">
+                                                        <h5>perfomances @
+                                                            10µm air gap
+                                                        </h5>
+                                                        <table class="table table-bordered table-striped">
+                                                            <tbody id="technical_data_product_row">
+                                                                <tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Load</th>
+                                                                        <td>
+                                                                            <span t-esc="product.product_load"/>
+                                                                            <span>N</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">
+                                                                            Stiffness
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.stiffness"/>
+                                                                            <span>N/µm</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Air
+                                                                            consumption
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.air_consumption_min"/>
+                                                                            <span>÷</span>
+                                                                            <span t-esc="product.air_consumption_max"/>
+                                                                            <span>l/min (ANR)</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </t>
+                                                    <t t-if="product.series != 'xab' and product.series != 'other' and product.series != 'kit'">
+                                                        <h5>perfomances @
+                                                            maximum
+                                                            stiffness
+                                                        </h5>
+                                                        <table class="table table-bordered table-striped">
+                                                            <tbody id="technical_data_product_row">
+                                                                <tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Maximum
+                                                                            stiffness
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.max_stiffness"/>
+                                                                            <span>N/µm</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Air gap
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.air_gap"/>
+                                                                            <span>µm</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Load</th>
+                                                                        <td>
+                                                                            <span t-esc="product.max_stiffness_load"/>
+                                                                            <span>N</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Air
+                                                                            consumption
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.max_stiffness_air_consumption_min"/>
+                                                                            <span>÷</span>
+                                                                            <span t-esc="product.max_stiffness_air_consumption_max"/>
+                                                                            <span>l/min (ANR)</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </t>
+                                                    <t t-if="product.series == 'xab' and product.series != 'other' and product.series != 'kit'">
+                                                        <h5>perfomances @ 4
+                                                            µm air gap
+                                                        </h5>
+                                                        <table class="table table-bordered table-striped">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Maximum
+                                                                            Radial Load
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.product_load"/>
+                                                                            <span>N</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Radial
+                                                                            Stiffness
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.stiffness"/>
+                                                                            <span>N/µm</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-right">Air
+                                                                            consumption
+                                                                        </th>
+                                                                        <td>
+                                                                            <span t-esc="product.air_consumption_min"/>
+                                                                            <span>÷</span>
+                                                                            <span t-esc="product.air_consumption_max"/>
+                                                                            <span>l/min (ANR)</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <t t-if="product.series != 'kit' and product.series != 'other'">
+                            <div class="tab-pane fade" id="nav_tabs_content_1666176939788_336"
+                                 role="tabpanel"
+                                 aria-labelledby="nav_tabs_link_1666176939788_336">
+                                <div class="oe_structure oe_empty">
+                                    <section class="s_text_block" style="background-image: none;">
+                                        <div class="container s_allow_columns">
+                                            <div class="oe_structure">
+                                                <div class="container" id="performances">
+                                                    <embed t-att-src="product.data_sheet"></embed>
+                                                    <a id="download-pdf"
+                                                       t-att-href="'%s?download=True' % product.data_sheet"
+                                                       class="btn btn-primary">DOWNLOAD PDF
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </t>
+                        <div class="tab-pane fade" id="nav_tabs_content_1666176939788_337"
+                             role="tabpanel"
+                             aria-labelledby="nav_tabs_link_1666176939788_337">
+                            <div class="oe_structure oe_empty">
+                                <section class="s_text_block" style="background-image: none;">
+                                    <div class="container s_allow_columns">
+                                        <div class="oe_structure">
+                                            <div class="container" id="drawings-2d-3d">
+                                                <embed t-att-src="product.pdf_drawing"></embed>
+                                                <a id="download-pdf"
+                                                   t-att-href="'%s?download=True' % product.pdf_drawing"
+                                                   class="btn btn-primary">DOWNLOAD PDF
+                                                </a>
+                                                <a id="download-step" t-att-href="'%s?download=True' % product.cad_3d"
+                                                   class="btn btn-primary">DOWNLOAD STEP
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <t t-if="product.series != 'kit' and product.series != 'other'">
+                            <div class="tab-pane fade" id="nav_tabs_content_1666176939788_338"
+                                 role="tabpanel"
+                                 aria-labelledby="nav_tabs_link_1666176939788_338">
+                                <div class="oe_structure oe_empty">
+                                    <section class="s_text_block" style="background-image: none;">
+                                        <div class="container s_allow_columns">
+                                            <div class="oe_structure">
+                                                <div class="container" id="accessories-cad-3d">
+                                                    <embed t-att-src="product.accessories"></embed>
+                                                    <a id="download-pdf"
+                                                       t-att-href="'%s?download=True' % product.accessories"
+                                                       class="btn btn-primary">DOWNLOAD PDF
+                                                    </a>
+                                                    <a id="download-step"
+                                                       t-att-href="'%s?download=True' % product.accessories_cad_3d"
+                                                       class="btn btn-primary">DOWNLOAD STEP
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//t[@t-call='website_sale.shop_product_images']/.." position="attributes">
+            <attribute name="class" add="col-md-6 col-md-4"
+                       remove="col-lg-#{image_cols[0]} mt-lg-4 o_wsale_product_images position-relative"/>
+        </xpath>
+
+        <xpath expr="//t[@t-call='website_sale.shop_product_images']/.." position="before">
+            <xpath expr="//div[@id='product_details']" position="move"/>
+        </xpath>
+
+        <xpath expr="//section[@id='product_detail']/div[1]" position="attributes">
+            <attribute name="style">display: none !important;</attribute>
+        </xpath>
+
+        <xpath expr="//div[@id='o_product_terms_and_share']" position="after">
+            <span t-esc="product.description"/>
+        </xpath>
+
+    </template>
+    <!--     use this template to modify the website_sale.product page-->
+
+    <!-- put the navbar image inside a div to be able to apply the border and other img modifies -->
+    <template id="theme_mager_custom_navbar_image" inherit_id="website.option_header_brand_logo"
+              name="Theme Mager Custom Navbar Image">
+        <xpath expr="//span[@t-field='website.logo']" position="replace">
+            <div class="mager_navbar_image">
+                <span t-field="website.logo" t-options="{'widget': 'image'}" role="img"
+                      t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- use this template to modify the navbar icons -->
+    <template id="theme_mager_custom_navbar_icons" inherit_id="website.template_header_default"
+              name="Theme Mager Custom Navbar Icons">
+        <xpath expr="//t[@t-call='website.navbar_toggler']" position="after">
+            <div class="container-fluid" id="mager-links" style="width: 25%">
+                <div class="row no-gutters">
+                    <div class="col col-lg-auto" style="background-color: rgba(2, 116, 190, 1)!important;">
+                        <a href="https://www.linkedin.com/company/mager-air-bearings/" role="button"
+                           class="dark-blue btn btn-primary">
+                            <i class="fa fa-linkedin fa-lg" aria-hidden="false"></i>
+                        </a>
+                    </div>
+                    <div class="col col-lg-auto" style="background-color: rgba(2, 116, 190, 1)!important;">
+                        <a href="https://www.youtube.com/user/MAGERairbearings" role="button"
+                           class="dark-blue btn btn-primary">
+                            <i class="fa fa-youtube-play fa-lg" aria-hidden="false"></i>
+                        </a>
+                    </div>
+                    <div class="col col-lg-auto" style="background-color: rgba(1, 158, 227, 1)!important;">
+                        <a href="https://mager-ab.it/contact-us/" role="button" class="contact_us btn btn-primary">
+                            CONTACT
+                            US
+                        </a>
+                    </div>
+                    <div class="col col-lg-auto" style="background-color: rgba(1, 158, 227, 1)!important;">
+                        <a href="#" role="button" class="search btn btn-primary" onclick="on()">
+                            <i class="fa fa-search" aria-hidden="false"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <!-- use this template to modify the navbar icons -->
+
+    <!-- use this template to modify the navbar toggler -->
+    <!--    <template id="theme_mager_custom_navbar_toggler" inherit_id="website.navbar_toggler"-->
+    <!--              name="Theme Mager Custom Navbar Image">-->
+    <!--        <xpath expr="//t[@t-name='website.navbar_toggler']" position="replace">-->
+    <!--            <button type="button" t-attf-class="navbar-toggler #{_toggler_class} p-2" data-toggle="collapse"-->
+    <!--                    data-target="#top_menu_collapse">-->
+    <!--                <span class="navbar-toggler-icon o_not_editable"/>-->
+    <!--            </button>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+    <!-- use this template to modify the navbar toggler -->
+
+</odoo>

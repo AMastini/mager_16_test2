@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+    <record id="display_category_form_view" model="ir.ui.view">
+        <field name="name">display.category.form.view</field>
+        <field name="model">display.category</field>
+        <field name="arch" type="xml">
+            <form class="oe_form_configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Category"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Lamps"/>
+                        </h1>
+                    </div>
+                    <group name="first" col="2">
+                        <field name="parent_id" class="oe_inline"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="display_category_tree_view" model="ir.ui.view">
+        <field name="name">display.category.tree.view</field>
+        <field name="model">display.category</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <tree string="Display Categories">
+                <field name="complete_name" string="Display Category"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="display_category_action" model="ir.actions.act_window">
+        <field name="name">Display Category</field>
+        <field name="res_model">display.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="display_category"
+            name="Display Category"
+            parent="mager_parent"
+            action="display_category_action"
+            sequence="123"/>
+
+</odoo>

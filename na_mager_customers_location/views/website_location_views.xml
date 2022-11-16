@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fixme [MPAGANI]: add copyright -->
+<odoo>
+    <data>
+        <record id="view_website_location_tree" model="ir.ui.view">
+            <field name="name">website.location.tree</field>
+            <field name="model">website.location</field>
+            <field name="arch" type="xml">
+                <tree string="Website Locations" editable="bottom">
+                    <field name="website_id" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="is_in"/>
+                    <field name="country_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_website_location_list" model="ir.actions.act_window">
+            <field name="name">Website location</field>
+            <field name="res_model">website.location</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_website_location_tree"/>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem name="Website locations"
+                  id="menu_website_website_location_list"
+                  action="action_website_location_list"
+                  parent="website.menu_website_global_configuration"
+                  sequence="11"
+        />
+    </data>
+</odoo>

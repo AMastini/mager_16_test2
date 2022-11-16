@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_visitor_portal,website_visitor_portal,website.model_website_visitor,base.group_portal,1,1,0,0
+access_website_visitor_public,website_visitor_public,website.model_website_visitor,base.group_public,1,1,0,0
+access_website_location,website_location_portal,model_website_location,base.group_portal,1,1,1,1
+access_website_location.public,website_location_public,model_website_location,base.group_public,1,1,1,1
+access_website_location.manager,website_location_portal_manager,model_website_location,website.group_website_designer,1,1,1,1
