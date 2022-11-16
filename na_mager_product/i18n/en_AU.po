@@ -1,0 +1,480 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* na_mager_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-27 07:55+0000\n"
+"PO-Revision-Date: 2022-07-27 07:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span attrs=\"{'invisible': [('series', '!=', 'hpc')]}\">x</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span attrs=\"{'invisible': [('series', '=', 'hpc')]}\">x</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid ""
+"<span attrs=\"{'invisible': [('series', '=', 'hpc')]}\">x</span>\n"
+"                                <span attrs=\"{'invisible': [('series', '!=', 'hpc')]}\">Ø</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>N/µm</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>N</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>bar</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>l/min (ANR)</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>µm</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "<span>÷</span>"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.actions.act_window,name:na_mager_product.accessories_action
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__accessories
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__accessories
+#: model:ir.ui.menu,name:na_mager_product.menu_accessories
+msgid "Accessories"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__accessories_cad_3d
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__accessories_cad_3d
+msgid "Accessories Cad 3D"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__rfx_id
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__rfx_id
+msgid "Air bushing + support version"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Air consumption"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__air_consumption_max
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__air_consumption_max
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Air consumption max."
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__air_consumption_min
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__air_consumption_min
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Air consumption min."
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__air_gap
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__air_gap
+msgid "Air gap"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__cad_3d
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__cad_3d
+msgid "Cad 3D"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.display_category_form_view
+msgid "Category"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__hra_coating_air_surface
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__hra_coating_air_surface
+msgid "Coatings aerostatic surface"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__code
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Code"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Code RBB – only air bushing version"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Code RFx – air bushing + support version"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__create_uid
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__create_date
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__data_sheet
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__data_sheet
+msgid "Data sheet"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.accessories_form_view
+msgid "Define an accessory"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__description
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__description
+msgid "Description"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__diameter
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__diameter
+msgid "Diameter"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Dimensions"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__description
+msgid "Dimensions and Description"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.display_category_tree_view
+msgid "Display Categories"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.actions.act_window,name:na_mager_product.display_category_action
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__display_category_id
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__display_category_id
+#: model:ir.ui.menu,name:na_mager_product.display_category
+#: model_terms:ir.ui.view,arch_db:na_mager_product.display_category_tree_view
+msgid "Display Category"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__display_name
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__height
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__height
+msgid "Height"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__length_uom_name
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__length_uom_name
+msgid "Height unit of measure label"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__id
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__id
+msgid "ID"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__image
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__image
+msgid "Image URL"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__kit_type
+msgid "Kit Type"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories____last_update
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__write_uid
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__write_date
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__length
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__length
+msgid "Length"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__product_load
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__product_load
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Load"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.ui.menu,name:na_mager_product.mager_parent
+msgid "Mager"
+msgstr ""
+
+#. module: na_mager_product
+#: model:res.groups,name:na_mager_product.product_group_manager_mager
+msgid "Mager Manager"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.module.category,name:na_mager_product.module_category_mager
+msgid "Mager products management "
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__max_stiffness_air_consumption_max
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__max_stiffness_air_consumption_max
+msgid "Max stiffness - Air consumption max."
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__max_stiffness_air_consumption_min
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__max_stiffness_air_consumption_min
+msgid "Max stiffness - Air consumption min."
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__max_stiffness_load
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__max_stiffness_load
+msgid "Max stiffness - Load"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Maximum Radial Load"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__max_stiffness
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__max_stiffness
+msgid "Maximum stiffness"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__hra_interfacing
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__hra_interfacing
+msgid "Methods of Interfacing"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_accessories__name
+msgid "Model"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model,name:na_mager_product.model_accessories
+msgid "Model for handling accessories"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model,name:na_mager_product.model_display_category
+msgid ""
+"Module made for displaying categories, allowing to manage them "
+"hierarchically"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields.selection,name:na_mager_product.selection__accessories__kit_type__mounting
+msgid "Mounting"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__mounting_kit_id
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__mounting_kit_id
+msgid "Mounting Kit"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__name
+msgid "Name"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__air_nominal_supply_pressure
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__air_nominal_supply_pressure
+msgid "Nominal air supply pressure"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__parent_id
+msgid "Parent Category"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_display_category__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__pdf_drawing
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__pdf_drawing
+msgid "Pdf Drawing"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Perfomances @ 10µm air gap"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Perfomances @ 4µm air gap"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Perfomances @ maximum stiffness"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model,name:na_mager_product.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Radial Stiffness"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__rbb_dimensions
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__rbb_dimensions
+msgid "Rbb Dimensions"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__screw_pin_thread
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__screw_pin_thread
+msgid "Screw pin / Thread"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__series
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__series
+msgid "Series Type"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.module.category,description:na_mager_product.module_category_mager
+msgid "Show all data regarding Mager"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__stiffness
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__stiffness
+msgid "Stiffness"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__support
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__support
+msgid "Support version"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Technical data"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.na_mager_product_product_template_only_form_view_inherit
+msgid "Variants data"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__width
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__width
+msgid "Width"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields.selection,name:na_mager_product.selection__accessories__kit_type__wiper
+msgid "Wiper"
+msgstr ""
+
+#. module: na_mager_product
+#: model:ir.model.fields,field_description:na_mager_product.field_product_product__wiper_kit_id
+#: model:ir.model.fields,field_description:na_mager_product.field_product_template__wiper_kit_id
+msgid "Wiper Kit"
+msgstr ""
+
+#. module: na_mager_product
+#: code:addons/na_mager_product/models/display_category.py:0
+#, python-format
+msgid "You cannot create recursive categories."
+msgstr ""
+
+#. module: na_mager_product
+#: code:addons/na_mager_product/models/product_template.py:0
+#, python-format
+msgid "You must select a HPR, HPC, HRA or XAB category!"
+msgstr ""
+
+#. module: na_mager_product
+#: model_terms:ir.ui.view,arch_db:na_mager_product.display_category_form_view
+msgid "e.g. Lamps"
+msgstr ""

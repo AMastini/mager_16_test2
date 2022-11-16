@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+    <record id="acessories_tree_view" model="ir.ui.view">
+        <field name="name">accessories.tree.view</field>
+        <field name="model">accessories</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="accessories_form_view" model="ir.ui.view">
+        <field name="name">accessories.form.view</field>
+        <field name="model">accessories</field>
+        <field name="arch" type="xml">
+            <form string="Define an accessory">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="ecommerce_category_id"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="kit_type"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="accessories_action" model="ir.actions.act_window">
+        <field name="name">Accessories</field>
+        <field name="res_model">accessories</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="menu_accessories"
+            name="Accessories"
+            parent="mager_parent"
+            action="accessories_action"
+            sequence="122"/>
+</odoo>
