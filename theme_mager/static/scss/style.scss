@@ -92,6 +92,20 @@ div.o_grid_item.col-lg-2.g-col-lg-2.g-height-1.o_colored_level
     margin-top: 4%;
 }
 
+// centered mega menu
+.dropdown-menu.o_mega_menu.o_no_parent_editor.o_mega_menu_container_size.show
+{
+    left: 50%;
+    top: revert;
+}
+
+.navbar #top_menu.o_menu_loading
+{
+    overflow: hidden !important;
+    opacity: 1 !important;
+}
+
+
 // Hiding the Odoo's default policy button
 div.o_grid_item.col-lg-2.g-col-lg-2.g-height-1.o_colored_level.d-md-none.o_snippet_desktop_invisible
 {
