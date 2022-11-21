@@ -210,8 +210,11 @@ button.btn.oe_search_button.btn-primary
     margin-left: 2% !important;
 }
 
-// div#products_grid > div.products_header.btn-toolbar.flex-nowrap.align-items-center.justify-content-between.mb-3,
-div.o_wsale_filmstip_container.d-flex.align-items-stretch.mb-2.overflow-hidden,
+div.o_wsale_filmstip_container.d-flex.align-items-stretch.mb-2.overflow-hidden
+{
+    margin-top: 1%;
+}
+
 div#products_grid > div#category_header, ol.breadcrumb.d-none.d-lg-flex.w-100.p-0.small
 {
     display: none !important;
@@ -739,6 +742,12 @@ a#download-pdf
 // Shared customization between phones and tablets
 @media only screen and (max-width: 1050px) and (min-width: 200px)
 {
+
+    div.o_wsale_filmstip_container.d-flex.align-items-stretch.mb-2.overflow-hidden
+    {
+        margin-top: 5%;
+    }
+
     form.o_searchbar_form.s_searchbar_input
     {
         width: 80%;
@@ -1280,9 +1289,10 @@ a#download-pdf
 }
 
 // Prevents product cards from overlapping
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1560px) {
     div.col-md-4.oe_product
     {
       flex: 50%;
     }
 }
+
