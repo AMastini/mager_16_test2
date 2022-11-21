@@ -47,8 +47,8 @@
                 document.getElementById("overlay").style.transition = "all 1s";
                 document.getElementById("cancel_search_btn").style.display = "block";
                 document.getElementById("mager_search").style.color = "white";
-<!--                document.getElementById("mager_search").style.fontSize = "3rem";-->
-<!--                document.getElementById("search_bar").style.fontSize = "3rem";-->
+                <!--                document.getElementById("mager_search").style.fontSize = "3rem";-->
+                <!--                document.getElementById("search_bar").style.fontSize = "3rem";-->
                 }
 
                 function off() {
@@ -510,6 +510,110 @@
         </t>
     </template>
     <!-- use this template to modify the accessories page -->
+
+    <template id="flat-air-bearings-hra" name="Flat Air Bearings HRA Layout Mager">
+        <t t-name="website.flat-air-bearings-hra-series">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_picture o_colored_level parallax o_cc o_cc2 pt64 pb0" data-snippet="s_picture"
+                             style="background-position: 68.4334% 0%; position: relative; background-color: rgb(255, 255, 255) !important; background-image: none;"
+                             data-scroll-background-ratio="-0.15" data-original-id="1857"
+                             data-original-src="/web/image/1857-5405e8e5/bearings-2-scaled-e1656322223520.jpg"
+                             data-mimetype="image/jpeg" data-resize-width="1920" data-name="Custom Picture">
+                        <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                              style="background-image: url(&quot;/web/image/3801-769f120f/assieme-HRA-3-scaled-e1656322563812.jpg&quot;); background-position: 4.64135% 0%; top: -12.915px; bottom: -12.915px; transform: translateY(5px);"
+                              data-original-id="3800"
+                              data-original-src="/web/image/3800-07c72586/assieme-HRA-3-scaled-e1656322563812.jpg"
+                              data-mimetype="image/jpeg" data-resize-width="1920"/>
+                        <div class="o_we_bg_filter bg-black-50"/>
+                        <div class="container-fluid">
+                            <ul style="text-align: center;">
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <br/>
+                                    </h3>
+                                </li>
+                                <li>
+                                    <h3 style="text-align: center;">
+                                        <font class="text-o-color-3 o_default_snippet_text" style="font-weight: 500;">
+                                            FLAT AIR BEARINGS - HP
+                                            series
+                                        </font>
+                                        <br/>
+                                    </h3>
+                                </li>
+                            </ul>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                        </div>
+                    </section>
+                    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id="internal_nav_bar_mager">
+                        <div class="collapse navbar-collapse" id="navbarNav" data-original-title="" title=""
+                             aria-describedby="tooltip687528">
+                            <ul class="products navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       onclick="document.getElementById('hra-series').scrollIntoView({ behavior: 'smooth', block: 'start'});">
+                                        HRA SERIES
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <section id="hra-series" class="s_title o_colored_level pb8 pt64" data-vcss="001"
+                             data-snippet="s_title"
+                             style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                             data-name="Title su misura">
+                        <div class="s_allow_columns container" id="products-titles">
+                            <h1 style="text-align: left;">
+                                <font style="font-size: 1.8666666666667rem; font-weight: 500; font-family: 'Oswald',sans-serif; color: rgb(1, 158, 227);"
+                                      class="o_default_snippet_text">
+                                    HRA SERIES
+                                </font>
+                                <br/>
+                            </h1>
+                        </div>
+                    </section>
+                    <section class="s_features o_colored_level pt0 pb56" data-snippet="s_features"
+                             style="background-color: rgb(238, 238, 238) !important; background-image: none;"
+                             data-original-title="" title="" aria-describedby="tooltip924068"
+                             data-name="Features su misura">
+                        <div class="container">
+                            <div class="row" data-original-title="" title="" aria-describedby="tooltip598833">
+                                <div id="hra-card"
+                                     class="text-center o_colored_level o_visible o_animated o_animating pb8 pt40 col-lg-4"
+                                     style="animation-play-state: running; visibility: visible; max-width: 426px !important;"
+                                     href="/shop/category/flat-air-bearings-hpr-rectangular-10" data-original-title=""
+                                     title="" aria-describedby="tooltip758235">
+                                    <h3>
+                                        <img src="/web/image/2009-a2a20aef/HRA2030P.jpg" alt=""
+                                             class="img-fluid o_we_custom_image o_animating img"
+                                             style="animation-play-state: paused; transition: none 0s ease 0s; transform: scaleX(1.15); min-height: 1px;"
+                                             data-original-id="639"
+                                             data-original-src="/web/image/639-f2221e5f/HRA2030P.jpg"
+                                             data-mimetype="image/jpeg" data-resize-width="690" loading="lazy"/>
+                                        <br/>
+                                        <br/>
+                                    </h3>
+                                    <div class="product-text-btn">
+                                        <h2 class="o_default_snippet_text">HEAVY DUTY FLAT AIR BEARINGS</h2>
+                                        <a href="/shop/category/hra-4" role="button"
+                                           class="click-here-btn btn btn-primary o_default_snippet_text"
+                                           data-bs-original-title="" title="">Click here
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </t>
+    </template>
 
 
     <!-- use this template to modify the website_sale.products page -->
