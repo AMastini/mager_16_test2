@@ -304,6 +304,11 @@ a.dropdown-item span:hover
     border-bottom: 0px;
 }
 
+div#wrap > section:nth-child(2n+9) > div > div
+{
+    justify-content: center !important;
+}
+
 // Navbar Links Customizations
 a.contact_us.btn.btn-primary, a.dark-blue.btn.btn-primary,a.search.btn.btn-primary
 {
@@ -743,6 +748,19 @@ a#download-pdf
 //     {
 //         font-size: 1rem;
 //     }
+
+    div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4
+    {
+        width: 17rem !important;
+        margin-left: 0% !important;
+        height: 16rem !important;
+        margin-right: 3% !important;
+    }
+
+    div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4 > h3 > img.img-fluid.o_we_custom_image.o_animating
+    {
+        height: 259px !important;
+    }
 
     div.card-body.p-1.oe_product_image > a
     {
