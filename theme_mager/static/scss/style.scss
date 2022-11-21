@@ -304,12 +304,6 @@ a.dropdown-item span:hover
     border-bottom: 0px;
 }
 
-
-div#top_menu_collapse
-{
-    padding-left: 7rem;
-}
-
 // Navbar Links Customizations
 a.contact_us.btn.btn-primary, a.dark-blue.btn.btn-primary,a.search.btn.btn-primary
 {
@@ -731,6 +725,11 @@ a#download-pdf
 {
     display: none;
 }
+
+// div.font-monospace.pt8.bg-light > div > div.content > p
+// {
+//     font-family: 'Nunito Sans',sans-serif;
+// }
 
 // Shared customization between phones and tablets
 @media only screen and (max-width: 1050px) and (min-width: 200px)
