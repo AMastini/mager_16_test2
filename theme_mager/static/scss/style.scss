@@ -684,7 +684,7 @@ div.oe_product
 {
     padding: 2rem;
     padding-top: 0rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
 }
 
 // h6
@@ -738,6 +738,11 @@ a#download-pdf
 // {
 //     font-family: 'Nunito Sans',sans-serif;
 // }
+
+div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
+{
+    display: none !important;
+}
 
 // Shared customization between phones and tablets
 @media only screen and (max-width: 1050px) and (min-width: 200px)
