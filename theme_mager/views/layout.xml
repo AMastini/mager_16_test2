@@ -1201,7 +1201,7 @@
                                                             µm air gap
                                                         </h5>
                                                         <table class="table table-bordered table-striped">
-                                                            <tbody>
+                                                            <tbody id="technical_data_product_row">
                                                                 <tr>
                                                                     <tr>
                                                                         <th class="text-right">Maximum
