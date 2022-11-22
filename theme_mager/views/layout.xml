@@ -1070,14 +1070,15 @@
                                                                             <span t-esc="product.dimensions_descriptions"/>
                                                                         </td>
                                                                     </tr>
-                                                                    <t t-if="product.series == 'other'"></t>
-                                                                    <tr>
-                                                                        <th class="text-right">Perfect fit for
-                                                                        </th>
-                                                                        <td>
-                                                                            <span t-esc="product.perfect_fit_for_others"/>
-                                                                        </td>
-                                                                    </tr>
+                                                                    <t t-if="product.series == 'other'">
+                                                                        <tr>
+                                                                            <th class="text-right">Perfect fit for
+                                                                            </th>
+                                                                            <td>
+                                                                                <span t-esc="product.perfect_fit_for_others"/>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </t>
                                                                     <t t-if="product.series == 'kit'">
                                                                         <tr>
                                                                             <th class="text-right">Perfect
