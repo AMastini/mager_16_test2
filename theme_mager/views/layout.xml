@@ -97,7 +97,6 @@
         </xpath>
     </template>
 
-
     <!-- use this template to modify the flat air bearings page -->
     <template id="flat-air-bearings" name="Flat Air Bearings Layout">
         <t t-name="theme_mager.flat-air-bearings">
@@ -615,7 +614,6 @@
         </t>
     </template>
 
-
     <!-- use this template to modify the website_sale.products page -->
     <template id="mager-products" name="Mager Products Layout" inherit_id="website_sale.products">
         <xpath expr="//t[@t-set='additional_title']" position="after">
@@ -911,7 +909,7 @@
                     combination.
                 </p>
             </div>
-            <div class="container" style="margin-bottom: 10%;">
+            <div class="container">
                 <div class="s_tabs_main">
                     <div class="s_tabs_nav mb-3">
                         <ul class="nav nav-pills" role="tablist">
@@ -1382,6 +1380,12 @@
         </xpath>
     </template>
     <!-- use this template to modify the navbar icons -->
+
+    <template id="theme_mager_alternative_products_inherit" inherit_id="website_sale.alternative_products">
+        <xpath expr="//div[@class='css_non_editable_mode_hidden']" position="before">
+            <h4>Alternative Products:</h4>
+        </xpath>
+    </template>
 
     <!-- use this template to modify the navbar toggler -->
     <!--    <template id="theme_mager_custom_navbar_toggler" inherit_id="website.navbar_toggler"-->

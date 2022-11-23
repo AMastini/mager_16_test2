@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
+// Alternative products
+div.d-flex.flex-grow-0.flex-shrink-0.col-3 > div > a > div > img
+{
+    object-fit: fill !important;
+    width: 17rem !important;
+}
+
+div.dynamic_snippet_template
+{
+    margin-top: 1rem !important;
+}
+
 // Color product cards title
 a.text-primary.text-decoration-none
 {
