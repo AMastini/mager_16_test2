@@ -99,6 +99,15 @@ div.o_grid_item.col-lg-2.g-col-lg-2.g-height-1.o_colored_level
     top: revert;
 }
 
+// mega manu hover on options
+div.row.o_we_force_no_transition > div > nav > a
+{
+    &:hover, &:focus
+    {
+        background-color: #E9ECEF;
+    }
+}
+
 .navbar #top_menu.o_menu_loading
 {
     overflow: hidden !important;
