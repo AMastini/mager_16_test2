@@ -105,7 +105,6 @@ div.o_grid_item.col-lg-2.g-col-lg-2.g-height-1.o_colored_level
     opacity: 1 !important;
 }
 
-
 // Hiding the Odoo's default policy button
 div.o_grid_item.col-lg-2.g-col-lg-2.g-height-1.o_colored_level.d-md-none.o_snippet_desktop_invisible
 {
@@ -486,6 +485,7 @@ div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg
     width: 400px !important;
     background-color: rgba(130,130,130, 0.68) !important;
     margin-left: 1.5% !important;
+    margin-top: 2rem;
 }
 
 // Settings for the animation of the category cards
@@ -872,7 +872,7 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     // Distance between each sub-category card
     div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4
     {
-        margin-bottom: 10% !important;
+        margin-bottom: 1rem !important;
     }
 
     div#o-carousel-product

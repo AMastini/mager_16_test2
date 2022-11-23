@@ -1026,7 +1026,7 @@
                                                                         </td>
                                                                     </tr>
                                                                 </t>
-                                                                <t t-if="product.series != 'xab' and product.series != 'other' and  product.series != 'kit' and product.mounting_kit_id != False">
+                                                                <t t-if="product.series != 'xab' and product.series != 'other' and  product.series != 'kit' and product.mounting_kit_id.name != False">
                                                                     <tr>
                                                                         <th class="text-right">Mounting
                                                                             Kit
