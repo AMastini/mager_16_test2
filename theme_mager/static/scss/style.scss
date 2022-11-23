@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
+// Alternative products
+img.card-img-top.o_img_product_square.o_img_product_cover.h-auto
+{
+    object-fit: fill !important;
+    width: 17rem !important;
+    height: 15rem !important;
+}
+
+div.dynamic_snippet_template
+{
+    margin-top: 1rem;
+}
+
+a.carousel-control-prev
+{
+    margin-left: -2rem;
+}
+
 // Color product cards title
 a.text-primary.text-decoration-none
 {
