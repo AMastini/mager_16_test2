@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+    <record id="na_delivery_carrier_view_delivery_carrier_form_inherit" model="ir.ui.view">
+        <field name="name">na.delivery.carrier.view.delivery.carrier.form.inherit</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='description']" position="after">
+                <page string="Shipping Data" name="shipping_data">
+                    <group>
+                        <group name="Shipping Data">
+                            <field name="weight_coefficent"/>
+                            <field name="increment"/>
+                            <label for="insurance_rate" string="Insurance Rate"/>
+                            <div>
+                                <field name="insurance_rate" class="oe_inline"/>%
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="na_delivery_carrier_view_delivery_price_rule_form_inherit" model="ir.ui.view">
+        <field name="name">na.delivery.carrier.view.delivery.carrier.form.inherit</field>
+        <field name="model">delivery.price.rule</field>
+        <field name="inherit_id" ref="delivery.view_delivery_price_rule_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/group[1]" position="after">
+                <field name="custom_rule" widget="radio"/>
+            </xpath>
+            <xpath expr="//form[1]/group[2]/label[2]" position="attributes">
+                <attribute name="attrs">{'invisible': [('custom_rule', '!=', 'normal_rule')]}</attribute>
+            </xpath>
+            <xpath expr="//form[1]/group[2]/div[2]" position="attributes">
+                <attribute name="attrs">{'invisible': [('custom_rule', '!=', 'normal_rule')]}</attribute>
+            </xpath>
+            <xpath expr="//form[1]/group[2]" position="after">
+                <group attrs="{'invisible': [('custom_rule', '!=', 'custom_rule_1')]}">
+                    <label for="weight_coefficent" string="Delivery Cost"/>
+                    <div>
+                        (
+                        <field name="weight_coefficent" class="oe_inline"/>
+                        * ((Net weight + Packing weight) * Ordered Quantity) +
+                        <field name="increment" class="oe_inline"/>
+                        ) * (1 +
+                        <field name="insurance_rate" class="oe_inline"/>
+                        )
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
