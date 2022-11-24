@@ -10,7 +10,6 @@
         <xpath expr="//head/meta[last()]" position="after">
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <meta name="robots" content="noindex"/>
             </head>
         </xpath>
         <xpath expr="//div[@id='wrapwrap']" position="before">
@@ -143,13 +142,6 @@
                                     <a class="nav-link"
                                        onclick="document.getElementById('hp-series').scrollIntoView({ behavior: 'smooth', block: 'end'});">
                                         HP SERIES
-                                    </a>
-                                </li>
-                                <div class="border-right"/>
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                       onclick="document.getElementById('hra-series').scrollIntoView({ behavior: 'smooth', block: 'start'});">
-                                        HRA SERIES
                                     </a>
                                 </li>
                             </ul>
