@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Mastini Alberto - Nexapp S.r.l.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ -->
+<odoo>
+    <template id="active_insurance_layout" inherit_id="portal.frontend_layout" name="Active Insurance Layout">
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+
+            <script type="text/javascript">
+                function check_active_insurance()
+                {
+                if(document.getElementById('checkbox_insurance').checked)
+                {
+                document.getElementById('delivery_amount').textContent="50";
+                var insurance = 12;
+                console.log(insurance)
+                }
+                else
+                {
+                console.log('non checkato')
+                }
+                }
+            </script>
+        </xpath>
+    </template>
+
+
+    <template id="na_delivery_carrier_cart_delivery" name="Cart Delivery Value"
+              inherit_id="website_sale_delivery.cart_delivery">
+        <xpath expr="//span[@class='monetary_field']" position="attributes">
+            <attribute name="id">delivery_amount</attribute>
+        </xpath>
+    </template>
+
+<!--    <template id="na_delivery_carrier_payment_delivery_methods" name="Show Invoices"-->
+<!--              inherit_id="website_sale_delivery.payment_delivery_methods">-->
+<!--        <xpath expr="//span[@t-attf-class='#{badge_class} o_wsale_delivery_badge_price']" position="after">-->
+<!--            <t t-if="delivery.price_rule_ids[0].custom_rule == 'custom_rule_1'">-->
+<!--                <input type="checkbox" id="checkbox_insurance" class="custom-control-input"-->
+<!--                       onclick="check_active_insurance()"/>-->
+<!--                <label for="checkbox_insurance" class="custom-control-label">-->
+<!--                    Include Insurance-->
+<!--                </label>-->
+
+<!--            </t>-->
+<!--            <t t-else="">-->
+<!--                <div style="display: none !important;">-->
+<!--                    <input type="checkbox" id="checkbox_insurance" class="custom-control-input"/>-->
+<!--                    <label for="checkbox_insurance" class="custom-control-label">-->
+<!--                        Include Insurance-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

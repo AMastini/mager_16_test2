@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nexapp_delivery_carrier_manager,product.template.manager,model_delivery_carrier,na_mager_product.product_group_manager_mager,1,1,1,1
+access_nexapp_delivery_carrier_public,product.template.public,model_delivery_carrier,base.group_public,1,0,0,0
+access_nexapp_delivery_carrier_portal,display.uom.portal,model_delivery_carrier,base.group_portal,1,0,0,0
