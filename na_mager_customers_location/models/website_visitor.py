@@ -1,7 +1,7 @@
 # -- coding: utf-8 --
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo import api, fields, models, _
-from odoo.http import request
+from odoo.http import request as request_tests
 import requests
 from psycopg2 import sql
 
@@ -12,6 +12,13 @@ class WebsiteVisitor(models.Model):
     def get_country_id(self):
         # request the data from the url
         url = 'http://ipinfo.io/json'
+
+        request_test = request_tests.httprequest.environ['REMOTE_ADDR']
+
+        request_url = 'https://geolocation-db.com/jsonp/' + request_test
+        response = requests.get(request_url)
+        result_test = response.content.decode()
+
         request = requests.get(url)
         json_data = request.json()
 
