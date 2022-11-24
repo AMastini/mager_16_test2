@@ -15,15 +15,17 @@ class WebsiteVisitor(models.Model):
 
         request_test = request_tests.httprequest.environ['REMOTE_ADDR']
 
-        request_url = 'https://geolocation-db.com/jsonp/' + request_test
+        request_url = 'https://api.db-ip.com/v2/free/self'
         response = requests.get(request_url)
         result_test = response.content.decode()
 
-        request = requests.get(url)
-        json_data = request.json()
+        # request = requests.get(url)
+        # json_data = request.json()
+
+        country_code = result_test[112:114]
 
         # get the country
-        country_code = json_data['country']
+        # country_code = json_data['countryCode']
         country_id = self.env['res.country'].search([
             ('code', '=', country_code)], limit=1)
 
