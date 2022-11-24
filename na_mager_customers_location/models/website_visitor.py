@@ -2,7 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo import api, fields, models, _
 from odoo.http import request
+
+import socket
 import requests
+import json
 from psycopg2 import sql
 
 
@@ -15,8 +18,26 @@ class WebsiteVisitor(models.Model):
         request = requests.get(url)
         json_data = request.json()
 
+        hostname = socket.gethostname()
+        ## getting the IP address using socket.gethostbyname() method
+        ip_address = socket.gethostbyname(hostname)
+        ## printing the hostname and ip_address
+        print(f"Hostname: {hostname}")
+        print(f"IP Address: {ip_address}")
+
+        # URL to send the request to
+        request_url = 'https://geolocation-db.com/jsonp/' + url
+        # Send request and decode the result
+        response = requests.get(request_url)
+        result = response.content.decode()
+        # Clean the returned string so it just contains the dictionary data for the IP address
+        result = result.split("(")[1].strip(")")
+        # Convert this data into a dictionary
+        result = json.loads(result)
+        print(result)
+
         # get the country
-        country_code = json_data['country']
+        country_code = result['country_code']
         country_id = self.env['res.country'].search([
             ('code', '=', country_code)], limit=1)
 
