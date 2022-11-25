@@ -40,7 +40,11 @@
             </div>
 
             <script>
-                function on() {
+               function on() {
+
+                                    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+                        console.log(JSON.stringify(data, null, 2));
+                        });
                 document.getElementById("overlay").classList.add("d-flex");
                 document.getElementById("overlay").style.display = "block";
                 document.getElementById("overlay").style.transition = "all 1s";
@@ -142,6 +146,13 @@
                                     <a class="nav-link"
                                        onclick="document.getElementById('hp-series').scrollIntoView({ behavior: 'smooth', block: 'end'});">
                                         HP SERIES
+                                    </a>
+                                </li>
+                                <div class="border-right"/>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       onclick="document.getElementById('hra-series').scrollIntoView({ behavior: 'smooth', block: 'start'});">
+                                        HRA SERIES
                                     </a>
                                 </li>
                             </ul>
