@@ -193,21 +193,11 @@ tbody#technical_data_product_row > tr:nth-child(even) {
     background: #F2F2F2;
 }
 
-// tbody#technical_data_product_row > tr:nth-child(odd) {
-//     background: #D0D3D4;
-// }
-
 // Bigger header to contain the new navbar
 .container, .o_container_small
 {
     max-width: 1451px;
 }
-
-// Modifying the dimension of the product image
-// div#product_detail_main > div
-// {
-//     width: 30rem;
-// }
 
 div#wishlist-button
 {
@@ -238,11 +228,6 @@ form.o_searchbar_form.s_searchbar_input
 {
     width: 30%;
 }
-
-// div.input-group.mt8 > input
-// {
-//     font-size: 4rem;
-// }
 
 // Not displaying the price filter on the single products page
 aside#products_grid_before
@@ -310,11 +295,6 @@ nav.navbar.navbar-expand-lg.navbar-light.o_colored_level.o_cc.shadow-sm
     transition: 0.3s linear;
     background: rgba(255,255,255,1) !important;
 }
-
-// ul#top_menu > li.o_wsale_my_cart.align-self-md-start.nav-item.mx-lg-3 > a.nav-link
-// {
-//     display: none !important;
-// }
 
 // Added Border for the navbar image
 div.mager_navbar_image
@@ -735,22 +715,11 @@ div.oe_product
     padding-left: 2rem;
 }
 
-// h6
-// {
-// font-family: 'Oswald',sans-serif
-// }
-
 // Not showing the phone button
 form#phone-add-to-cart
 {
     display: none;
 }
-
-// Distance between the table and the other elements of the single product page
-// div.s_tabs_main
-// {
-//     margin-top: -5%;
-// }
 
 // Need to check this
 .ms-lg-auto {
@@ -782,11 +751,6 @@ a#download-pdf
     display: none;
 }
 
-// div.font-monospace.pt8.bg-light > div > div.content > p
-// {
-//     font-family: 'Nunito Sans',sans-serif;
-// }
-
 div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
 {
     display: none !important;
@@ -810,11 +774,6 @@ section.s_text_block > div.s_allow_columns.container
     {
         width: 80%;
     }
-
-//     i#mager_search, input#search_bar
-//     {
-//         font-size: 1rem;
-//     }
 
     div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4
     {
@@ -857,11 +816,6 @@ section.s_text_block > div.s_allow_columns.container
     {
         margin-top: 1%;
     }
-
-//     .row > *
-//     {
-//         width: auto !important;
-//     }
 
     div#mager-links > div.row.no-gutters
     {
@@ -945,6 +899,11 @@ section.s_text_block > div.s_allow_columns.container
         width: 8rem !important;
     }
 
+    video#videohome
+    {
+        height: 15rem;
+    }
+
     div.s_col_no_bgcolor.g-.g-height-17.col-lg-2
     {
         width: 100% !important;
@@ -973,6 +932,11 @@ section.s_text_block > div.s_allow_columns.container
         margin-bottom: 5%;
     }
 
+    video#videohome
+    {
+        height: 20rem;
+    }
+
 }
 
 
@@ -989,6 +953,11 @@ section.s_text_block > div.s_allow_columns.container
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 501px){
+
+    video#videohome
+    {
+        height: 22rem;
+    }
 
     div#wrap > div#scrolling-box > section:nth-child(2n+9) > div > div
     {
@@ -1093,7 +1062,6 @@ section.s_text_block > div.s_allow_columns.container
     div#scrolling-box
     {
         margin-left: 3%;
-        //margin-right: 5.5%;
     }
 
     // Distance between the products
@@ -1166,7 +1134,6 @@ section.s_text_block > div.s_allow_columns.container
     {
         width: 150px !important;
         margin-left: -1px !important;
-//         margin-top: 40px !important;
     }
 
     // Not displaying the product information inside the card
@@ -1187,13 +1154,6 @@ section.s_text_block > div.s_allow_columns.container
         width: 100% !important;
         margin-left: 0%;
      }
-
-    // Distancing the image from the product description in the product page
-//      .h-100, #o-carousel-product .carousel-outer
-//      {
-//         max-height: 13.75rem;
-// //         margin-top: 1.5% !important;
-//      }
 
     div#shopping-cart-col
     {
