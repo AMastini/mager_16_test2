@@ -1403,7 +1403,7 @@
             <div class="form-group field-login">
                 <label class="col-form-label">
                     <input type="checkbox" id="privacy_acceptance" name="privacy_acceptance" required="required"/>
-                    <a href="/privacy-policy" target="_blank">Privacy</a>
+                    <a href="https://www.iubenda.com/privacy-policy/68604670" target="_blank">Privacy</a>
                 </label>
                 <br></br>
             </div>
