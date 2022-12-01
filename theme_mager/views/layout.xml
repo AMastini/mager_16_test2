@@ -40,11 +40,9 @@
             </div>
 
             <script>
-               function on() {
 
-                                    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
-                        console.log(JSON.stringify(data, null, 2));
-                        });
+
+                function on() {
                 document.getElementById("overlay").classList.add("d-flex");
                 document.getElementById("overlay").style.display = "block";
                 document.getElementById("overlay").style.transition = "all 1s";
@@ -1383,6 +1381,16 @@
         </xpath>
     </template>
     <!-- use this template to modify the navbar icons -->
+
+    <template id="theme_mager_payment_sale_note_inherit" inherit_id="website_sale.payment_sale_note"
+              name="Accept Privacy" active="True">
+        <xpath expr="//label[@for='checkbox_tc']" position="after">
+            <label for="checkbox_privacy" class="form-check-label">
+                and
+                <a target="_BLANK" href="https://www.iubenda.com/privacy-policy/68604670">Privacy conditions</a>
+            </label>
+        </xpath>
+    </template>
 
     <template id="theme_mager_alternative_products_inherit" inherit_id="website_sale.alternative_products">
         <xpath expr="//div[@class='css_non_editable_mode_hidden']" position="before">
