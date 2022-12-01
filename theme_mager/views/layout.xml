@@ -1398,6 +1398,18 @@
         </xpath>
     </template>
 
+    <template id="theme_mager.sign_up_custom_extend" inherit_id="auth_signup.fields" customize_show="True">
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+            <div class="form-group field-login">
+                <label class="col-form-label">
+                    <input type="checkbox" id="privacy_acceptance" name="privacy_acceptance" required="required"/>
+                    <a href="/privacy-policy" target="_blank">Privacy</a>
+                </label>
+                <br></br>
+            </div>
+        </xpath>
+    </template>
+
     <!-- use this template to modify the navbar toggler -->
     <!--    <template id="theme_mager_custom_navbar_toggler" inherit_id="website.navbar_toggler"-->
     <!--              name="Theme Mager Custom Navbar Image">-->
