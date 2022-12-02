@@ -2,20 +2,32 @@
 <odoo>
     <record id="view_account_position_form" model="ir.ui.view">
         <field name="model">account.fiscal.position</field>
-        <field name="inherit_id" ref="account.view_account_position_form" />
+        <field name="inherit_id" ref="account.view_account_position_form"/>
         <field name="arch" type="xml">
             <field name="vat_required" position="after">
-                <field name="update_vat" />
+                <field name="update_vat"/>
             </field>
         </field>
     </record>
     <record id="view_country_form" model="ir.ui.view">
         <field name="model">res.country</field>
-        <field name="inherit_id" ref="base.view_country_form" />
+        <field name="inherit_id" ref="base.view_country_form"/>
         <field name="arch" type="xml">
             <field name="vat_label" position="before">
-                <field name="default_incoterm_id" />
+                <field name="default_incoterm_id"/>
             </field>
         </field>
     </record>
+
+    <record id="na_view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">na.view.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="privacy_accepted" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
