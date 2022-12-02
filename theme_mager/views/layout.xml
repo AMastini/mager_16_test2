@@ -10,7 +10,6 @@
         <xpath expr="//head/meta[last()]" position="after">
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <meta name="robots" content="noindex"/>
             </head>
         </xpath>
         <xpath expr="//div[@id='wrapwrap']" position="before">
@@ -41,6 +40,8 @@
             </div>
 
             <script>
+
+
                 function on() {
                 document.getElementById("overlay").classList.add("d-flex");
                 document.getElementById("overlay").style.display = "block";
@@ -1381,9 +1382,31 @@
     </template>
     <!-- use this template to modify the navbar icons -->
 
+    <template id="theme_mager_payment_sale_note_inherit" inherit_id="website_sale.payment_sale_note"
+              name="Accept Privacy" active="True">
+        <xpath expr="//label[@for='checkbox_tc']" position="after">
+            <label for="checkbox_privacy" class="form-check-label">
+                and
+                <a target="_BLANK" href="https://www.iubenda.com/privacy-policy/68604670">Privacy conditions</a>
+            </label>
+        </xpath>
+    </template>
+
     <template id="theme_mager_alternative_products_inherit" inherit_id="website_sale.alternative_products">
         <xpath expr="//div[@class='css_non_editable_mode_hidden']" position="before">
             <h4>Alternative Products:</h4>
+        </xpath>
+    </template>
+
+    <template id="theme_mager.sign_up_custom_extend" inherit_id="auth_signup.fields" customize_show="True">
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+            <div class="form-group field-login">
+                <label class="col-form-label">
+                    <input type="checkbox" id="privacy_acceptance" name="privacy_acceptance" required="required"/>
+                    <a href="https://www.iubenda.com/privacy-policy/68604670" target="_blank">Privacy</a>
+                </label>
+                <br></br>
+            </div>
         </xpath>
     </template>
 

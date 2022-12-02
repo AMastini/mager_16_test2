@@ -170,6 +170,11 @@ div#footer > section > div.container > div > div > p
     margin-bottom: 0.3rem !important;
 }
 
+div.card-body > p:nth-child(1)
+{
+    height: 8rem;
+}
+
 // Removing the bar with the company data under the footer
 div[data-name="Copyright"]
 {
@@ -188,21 +193,11 @@ tbody#technical_data_product_row > tr:nth-child(even) {
     background: #F2F2F2;
 }
 
-// tbody#technical_data_product_row > tr:nth-child(odd) {
-//     background: #D0D3D4;
-// }
-
 // Bigger header to contain the new navbar
 .container, .o_container_small
 {
     max-width: 1451px;
 }
-
-// Modifying the dimension of the product image
-// div#product_detail_main > div
-// {
-//     width: 30rem;
-// }
 
 div#wishlist-button
 {
@@ -233,11 +228,6 @@ form.o_searchbar_form.s_searchbar_input
 {
     width: 30%;
 }
-
-// div.input-group.mt8 > input
-// {
-//     font-size: 4rem;
-// }
 
 // Not displaying the price filter on the single products page
 aside#products_grid_before
@@ -306,11 +296,6 @@ nav.navbar.navbar-expand-lg.navbar-light.o_colored_level.o_cc.shadow-sm
     background: rgba(255,255,255,1) !important;
 }
 
-// ul#top_menu > li.o_wsale_my_cart.align-self-md-start.nav-item.mx-lg-3 > a.nav-link
-// {
-//     display: none !important;
-// }
-
 // Added Border for the navbar image
 div.mager_navbar_image
 {
@@ -347,7 +332,7 @@ a.dropdown-item span:hover
     border-bottom: 0px;
 }
 
-div#wrap > section:nth-child(2n+9) > div > div
+div#wrap > section:nth-child(2n+8) > div > div
 {
     justify-content: center !important;
 }
@@ -513,7 +498,7 @@ div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg
     max-width: 426px !important;
     width: 400px !important;
     background-color: rgba(130,130,130, 0.68) !important;
-    margin-left: 1.5% !important;
+    margin-left: 2% !important;
     margin-top: 2rem;
 }
 
@@ -639,7 +624,7 @@ div#o_product_terms_and_share
 // Customization to the table navbar inside the single product page
 ul.nav.nav-pills > li.nav-item
 {
-    width: 16%;
+    width: 19%;
     text-align: center;
 }
 
@@ -730,22 +715,11 @@ div.oe_product
     padding-left: 2rem;
 }
 
-// h6
-// {
-// font-family: 'Oswald',sans-serif
-// }
-
 // Not showing the phone button
 form#phone-add-to-cart
 {
     display: none;
 }
-
-// Distance between the table and the other elements of the single product page
-// div.s_tabs_main
-// {
-//     margin-top: -5%;
-// }
 
 // Need to check this
 .ms-lg-auto {
@@ -777,14 +751,14 @@ a#download-pdf
     display: none;
 }
 
-// div.font-monospace.pt8.bg-light > div > div.content > p
-// {
-//     font-family: 'Nunito Sans',sans-serif;
-// }
-
 div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
 {
     display: none !important;
+}
+
+section.s_text_block > div.s_allow_columns.container
+{
+    margin-top: 0% !important;
 }
 
 // Shared customization between phones and tablets
@@ -801,17 +775,12 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
         width: 80%;
     }
 
-//     i#mager_search, input#search_bar
-//     {
-//         font-size: 1rem;
-//     }
-
     div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4
     {
-        width: 17rem !important;
-        margin-left: 0% !important;
+        width: 20rem !important;
+        margin-left: 1.5% !important;
         height: 16rem !important;
-        margin-right: 3% !important;
+        margin-right: 1.5% !important;
     }
 
     div.text-center.o_colored_level.o_visible.o_animated.o_animating.pb8.pt40.col-lg-4 > h3 > img.img-fluid.o_we_custom_image.o_animating
@@ -846,11 +815,6 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     div.s_tabs_main
     {
         margin-top: 1%;
-    }
-
-    .row > *
-    {
-        width: auto !important;
     }
 
     div#mager-links > div.row.no-gutters
@@ -893,7 +857,7 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
         width: 50%;
     }
 
-    div#hpr-card, div#hpc-card, div#hra-card
+    div#hpr-card, div#hpc-card
     {
         width: 100% !important;
     }
@@ -934,7 +898,86 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     {
         width: 8rem !important;
     }
+
+    video#videohome
+    {
+        height: 15rem;
+    }
+
+    div.s_col_no_bgcolor.g-.g-height-17.col-lg-2
+    {
+        width: 100% !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 5%;
+    }
+
+    div.s_allow_columns.container
+    {
+        margin-top: 5%;
+    }
+
 }
+
+@media only screen and (min-width: 351px) and (max-width: 500px){
+
+    div.s_allow_columns.container
+    {
+        margin-top: 3%;
+    }
+
+    div.s_col_no_bgcolor.g-.g-height-17.col-lg-2
+    {
+        width: 50% !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 5%;
+    }
+
+    video#videohome
+    {
+        height: 20rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) and (min-width: 200px){
+
+    div#wrap > div#scrolling-box > section:nth-child(2n+9) > div > div,
+    div#wrap > section#Air-Bushings > div > div,
+    div#wrap > section.s_features.o_colored_level.pt0.pb56.bg-white > div > div,
+    div#wrap > section:nth-child(2n+3) > div > div
+    {
+        justify-content: center !important;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px){
+
+    video#videohome
+    {
+        height: 22rem;
+    }
+
+    div#wrap > div#scrolling-box > section:nth-child(2n+9) > div > div
+    {
+        margin-left: 5% !important;
+    }
+
+    div.s_allow_columns.container
+    {
+        margin-top: 2.5%;
+    }
+
+    div.s_col_no_bgcolor.g-.g-height-17.col-lg-2
+    {
+        width: 30% !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 5%;
+    }
+
+}
+
 
 // Media query for phone screen and tilted screen
 @media only screen and (max-width: 750px) {
@@ -1019,7 +1062,6 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     div#scrolling-box
     {
         margin-left: 3%;
-        margin-right: 5.5%;
     }
 
     // Distance between the products
@@ -1092,7 +1134,6 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     {
         width: 150px !important;
         margin-left: -1px !important;
-//         margin-top: 40px !important;
     }
 
     // Not displaying the product information inside the card
@@ -1112,13 +1153,6 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
      {
         width: 100% !important;
         margin-left: 0%;
-     }
-
-    // Distancing the image from the product description in the product page
-     .h-100, #o-carousel-product .carousel-outer
-     {
-        max-height: 13.75rem;
-//         margin-top: 1.5% !important;
      }
 
     div#shopping-cart-col
@@ -1172,6 +1206,11 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
 
 @media only screen and (max-width: 1100px) and (min-width: 751px)
 {
+
+    div.s_allow_columns.container
+    {
+        margin-top: 0%;
+    }
 
     #o-carousel-product .carousel-outer .carousel-inner img
     {
@@ -1333,6 +1372,11 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     }
 }
 
+div.card-body > p:nth-child(1)
+{
+    height: 8rem;
+}
+
 @media only screen and (min-width: 751px)
 {
     // Image size in product cards
@@ -1351,3 +1395,10 @@ div.o_wsale_apply_layout.btn-group.ms-3.d-flex.ms-3
     }
 }
 
+
+@media screen and (max-width: 850px) and (min-width: 767px) {
+    div.col-md-4.oe_product
+    {
+      flex: 51%;
+    }
+}

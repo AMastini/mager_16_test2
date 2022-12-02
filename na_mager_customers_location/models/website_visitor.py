@@ -1,7 +1,7 @@
 # -- coding: utf-8 --
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo import api, fields, models, _
-from odoo.http import request
+from odoo.http import request as odoo_request
 import requests
 from psycopg2 import sql
 
@@ -15,8 +15,11 @@ class WebsiteVisitor(models.Model):
         request = requests.get(url)
         json_data = request.json()
 
-        # get the country
-        country_code = json_data['country']
+        if not odoo_request:
+            # get the country
+            country_code = json_data['country']
+        else:
+            country_code = odoo_request.geoip.get('country_code')
         country_id = self.env['res.country'].search([
             ('code', '=', country_code)], limit=1)
 
