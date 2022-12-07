@@ -22,7 +22,7 @@ class ResPartner(models.Model):
         vals.update(
             {
             'property_account_position_id': self.retrieve_country_state_zip(country_id).id,
-            'privacy_accepted': request.params['privacy_acceptance'],
+            'privacy_accepted': request.params.get('privacy_acceptance', ''),
             })
 
         res = super(ResPartner, self).create(vals)
