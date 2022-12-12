@@ -36,7 +36,7 @@ class DeliveryCarrier(models.Model):
                 if rule_line.custom_rule == 'normal_rule':
                     weight += (line.product_id.weight or 0.0) * qty
                 else:
-                    weight += ((line.product_id.weight + line.product_id.packing_weight) or 0.0) * qty
+                    weight += ((line.product_id.weight + line.product_id.packing_weight) or 0.0)
             volume += (line.product_id.volume or 0.0) * qty
             quantity += qty
         total = (order.amount_total or 0.0) - total_delivery
@@ -59,8 +59,9 @@ class DeliveryCarrier(models.Model):
                     criteria_found = True
                     break
             else:
-                price = (line.weight_coefficent * (price_dict['weight'] * price_dict['quantity']) + line.increment) * (
-                            1 + line.insurance_rate)
+                # ((Coefficiente peso * (Peso netto + Peso imballo) + Incremento) * Quantità ordinata) *(1 + Aliquota assicurazione)
+                price = ((line.weight_coefficent * price_dict['weight'] + line.increment) * price_dict['quantity']) * (
+                        1 + line.insurance_rate)
                 criteria_found = True
                 break
         if not criteria_found:
